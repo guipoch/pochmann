@@ -22,28 +22,8 @@
   --sidebar-w:270px;
 }
 html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--text);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
-
-/* ── TELA DE LOGIN ── */
-.login-screen{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9999;padding:20px}
-.login-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:36px 32px;width:100%;max-width:380px;box-shadow:var(--shadow-lg)}
-.login-logo{display:flex;align-items:center;gap:12px;margin-bottom:28px}
-.login-logo-icon{width:44px;height:44px;background:#1A1917;border-radius:13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}
-.login-logo-name{font-size:18px;font-weight:600;color:var(--text)}
-.login-logo-sub{font-size:12px;color:var(--text3);margin-top:1px}
-.login-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px}
-.login-sub{font-size:13px;color:var(--text3);margin-bottom:22px}
-.login-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
-.login-group label{font-size:12px;font-weight:500;color:var(--text2)}
-.login-group input{font-family:var(--font);font-size:14px;padding:10px 13px;border:1px solid var(--border);border-radius:9px;background:var(--surface);color:var(--text);outline:none;transition:border-color .15s,box-shadow .15s}
-.login-group input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(26,107,74,.1)}
-.login-group input::placeholder{color:var(--text3)}
-.login-btn{width:100%;padding:11px;background:var(--accent);color:#fff;border:none;border-radius:9px;font-family:var(--font);font-size:14px;font-weight:600;cursor:pointer;transition:background .15s;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
-.login-btn:hover{background:var(--accent-dark)}
-.login-btn:disabled{opacity:.6;cursor:not-allowed}
-.login-erro{background:var(--danger-light);color:var(--danger);border-radius:8px;padding:9px 12px;font-size:13px;margin-bottom:14px;display:none;align-items:center;gap:8px}
-.login-erro.on{display:flex}
-
 .app{display:grid;grid-template-columns:var(--sidebar-w) 1fr;height:100vh;overflow:hidden}
+/* SIDEBAR */
 .sidebar{background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh;overflow:hidden;transition:transform .25s}
 .sidebar-header{padding:18px 18px 14px;border-bottom:1px solid var(--border);flex-shrink:0}
 .logo-wrap{display:flex;align-items:center;gap:10px}
@@ -60,24 +40,25 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--t
 .nav-label{font-size:10px;font-weight:600;color:var(--text3);letter-spacing:.9px;text-transform:uppercase;padding:8px 8px 4px}
 .nav-btn{display:flex;align-items:center;gap:10px;width:100%;border:none;background:none;cursor:pointer;padding:8px 10px;border-radius:8px;font-family:var(--font);font-size:13px;color:var(--text2);transition:background .12s,color .12s;text-align:left}
 .nav-btn:hover{background:var(--bg);color:var(--text)}
-.nav-btn.on{background:var(--accent-light);color:var(--accent);font-weight:500}
+.nav-btn.sel{background:var(--accent-light);color:var(--accent);font-weight:500}
 .nav-btn i{width:16px;text-align:center;font-size:14px}
 .client-list-wrap{flex:1;overflow-y:auto;padding:6px 8px 8px}
 .client-list-wrap::-webkit-scrollbar{width:5px}
 .client-list-wrap::-webkit-scrollbar-thumb{background:var(--border2);border-radius:5px}
 .client-item{display:flex;align-items:center;gap:9px;padding:8px 9px;border-radius:9px;cursor:pointer;transition:background .12s;border:1px solid transparent}
 .client-item:hover{background:var(--bg)}
-.client-item.on{background:var(--accent-light);border-color:rgba(26,107,74,.15)}
+.client-item.sel{background:var(--accent-light);border-color:rgba(26,107,74,.15)}
 .client-avatar{width:32px;height:32px;border-radius:50%;background:var(--surface2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--text2);flex-shrink:0}
-.client-item.on .client-avatar{background:rgba(26,107,74,.15);border-color:rgba(26,107,74,.2);color:var(--accent)}
+.client-item.sel .client-avatar{background:rgba(26,107,74,.15);border-color:rgba(26,107,74,.2);color:var(--accent)}
 .client-info{flex:1;min-width:0}
 .client-name{font-size:12.5px;font-weight:500;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .client-doc{font-size:11px;color:var(--text3);font-family:var(--mono)}
 .client-rx-badge{font-size:10px;background:var(--surface2);color:var(--text3);padding:2px 7px;border-radius:20px;white-space:nowrap;flex-shrink:0}
-.client-item.on .client-rx-badge{background:rgba(26,107,74,.12);color:var(--accent)}
+.client-item.sel .client-rx-badge{background:rgba(26,107,74,.12);color:var(--accent)}
 .sidebar-footer{padding:12px 14px;border-top:1px solid var(--border);flex-shrink:0}
 .btn-new-client{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:9px;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);font-family:var(--font);font-size:13px;font-weight:500;cursor:pointer;transition:background .15s}
 .btn-new-client:hover{background:var(--accent-dark)}
+/* MAIN */
 .main{display:flex;flex-direction:column;height:100vh;overflow:hidden}
 .main-header{display:flex;align-items:center;justify-content:space-between;padding:0 22px;height:57px;background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0;gap:10px}
 .page-title{font-size:15px;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -85,8 +66,10 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--t
 .main-body{flex:1;overflow-y:auto;padding:20px 22px}
 .main-body::-webkit-scrollbar{width:6px}
 .main-body::-webkit-scrollbar-thumb{background:var(--border2);border-radius:6px}
+/* VIEWS */
 .view{display:none;height:100%;flex-direction:column}
 .view.on{display:flex}
+/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:8px;font-family:var(--font);font-size:13px;font-weight:500;cursor:pointer;border:none;transition:background .15s;white-space:nowrap;line-height:1}
 .btn-primary{background:var(--accent);color:#fff}
 .btn-primary:hover{background:var(--accent-dark)}
@@ -98,10 +81,12 @@ html,body{height:100%;font-family:var(--font);background:var(--bg);color:var(--t
 .btn-ghost:hover{background:var(--bg)}
 .btn-sm{padding:6px 11px;font-size:12px}
 .btn-icon{width:30px;height:30px;padding:0;justify-content:center}
+/* CARDS */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow)}
 .card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px}
 .card-title{font-size:14px;font-weight:600}
 .card-subtitle{font-size:12px;color:var(--text3);margin-top:2px}
+/* FORMS */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
 .form-grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .form-group{display:flex;flex-direction:column;gap:4px}
@@ -113,6 +98,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 
 input::placeholder,textarea::placeholder{color:var(--text3)}
 textarea{resize:vertical;min-height:72px}
 .err-msg{font-size:11px;color:var(--danger);margin-top:2px;min-height:14px}
+/* RX */
 .rx-section{background:var(--bg);border-radius:10px;padding:13px 14px;margin-bottom:10px}
 .rx-label{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:9px;display:flex;align-items:center;gap:6px}
 input.rx{text-align:center;font-family:var(--mono);font-size:13px}
@@ -127,6 +113,7 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
 .rx-table tr:last-child td{border-bottom:none}
 .rx-table td:first-child{font-family:var(--font);font-size:12px;font-weight:500;color:var(--text2);width:50px}
 .rx-obs{margin-top:9px;padding:8px 10px;background:var(--warn-bg);color:var(--warn-text);border-left:3px solid #D4A520;border-radius:0 8px 8px 0;font-size:12px}
+/* FOTOS */
 .fotos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-top:4px}
 .foto-thumb{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:1;background:var(--surface2);border:1px solid var(--border);cursor:pointer;transition:transform .15s}
 .foto-thumb:hover{transform:scale(1.03)}
@@ -140,6 +127,7 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
 .foto-viewer.on{opacity:1;pointer-events:all}
 .foto-viewer img{max-width:92vw;max-height:88vh;border-radius:8px;object-fit:contain}
 .foto-viewer-close{position:absolute;top:16px;right:16px;width:40px;height:40px;background:rgba(255,255,255,.15);border:none;border-radius:50%;color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+/* STATS */
 .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:500}
 .badge-green{background:var(--accent-light);color:var(--accent)}
 .stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
@@ -147,11 +135,13 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
 .stat-label{font-size:11px;color:var(--text3);font-weight:500;margin-bottom:3px}
 .stat-value{font-size:20px;font-weight:600;color:var(--text)}
 .stat-value.green{color:var(--accent)}
+/* PROFILE */
 .profile-wrap{display:flex;align-items:center;gap:13px;margin-bottom:18px}
 .profile-avatar{width:50px;height:50px;border-radius:50%;background:var(--accent-light);border:2px solid rgba(26,107,74,.2);display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:600;color:var(--accent);flex-shrink:0}
 .profile-name{font-size:16px;font-weight:600}
 .profile-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:3px;font-size:12px;color:var(--text3)}
 .profile-meta span{display:flex;align-items:center;gap:4px}
+/* WELCOME / EMPTY */
 .welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:10px;text-align:center;padding:24px;color:var(--text2)}
 .welcome-icon{width:64px;height:64px;border-radius:20px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--accent);margin-bottom:8px}
 .welcome h2{font-size:18px;font-weight:600;color:var(--text)}
@@ -162,12 +152,7 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
 .empty p{font-size:13px}
 .empty-sb{padding:20px 8px;text-align:center;font-size:12px;color:var(--text3)}
 .empty-sb i{display:block;font-size:20px;margin-bottom:5px;opacity:.4}
-/* Loading */
-.ld{position:fixed;inset:0;background:rgba(245,243,238,.9);display:none;flex-direction:column;align-items:center;justify-content:center;z-index:800;gap:12px;font-size:13px;color:var(--text2)}
-.ld.on{display:flex}
-.spin{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite}
-@keyframes sp{to{transform:rotate(360deg)}}
-/* Modal */
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:500;opacity:0;pointer-events:none;transition:opacity .2s}
 .modal-overlay.on{opacity:1;pointer-events:all}
 .modal{background:var(--surface);border-radius:var(--radius-xl);padding:24px;width:580px;max-width:96vw;max-height:92vh;overflow-y:auto;transform:translateY(10px);transition:transform .2s;box-shadow:var(--shadow-lg)}
@@ -185,19 +170,24 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
 .confirm-btns{display:flex;gap:8px;justify-content:center}
 .parc-box{background:var(--surface);border-radius:var(--radius-xl);padding:22px;width:380px;max-width:95vw;box-shadow:var(--shadow-lg);transform:translateY(10px);transition:transform .2s}
 .modal-overlay.on .parc-box{transform:none}
+/* TOAST */
 .toast{position:fixed;bottom:22px;right:22px;display:flex;align-items:center;gap:9px;padding:11px 16px;border-radius:11px;font-size:13px;font-weight:500;z-index:700;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;pointer-events:none;max-width:340px}
 .toast.on{opacity:1;transform:none}
 .toast.success{background:#1A6B4A;color:#fff}
 .toast.error{background:var(--danger);color:#fff}
 .toast.info{background:var(--text);color:#fff}
+/* IMPORT */
 .imp-opt{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);transition:.15s;margin-bottom:8px}
+/* DASHBOARD */
 .dash-table{width:100%;border-collapse:collapse;font-size:13px}
 .dash-table th{text-align:left;padding:0 10px 8px 0;font-size:11px;font-weight:500;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
 .dash-table td{padding:8px 10px 8px 0;border-bottom:1px solid var(--border)}
 .dash-table tr:last-child td{border-bottom:none}
 .dash-table tr.link{cursor:pointer}
 .dash-table tr.link:hover td{background:var(--bg)}
+/* DIVIDER */
 .div{height:1px;background:var(--border);margin:6px 0}
+/* TABS */
 .tabs-bar{display:flex;gap:2px;background:var(--surface2);border-radius:var(--radius);padding:3px;margin-bottom:18px}
 .tab-btn{flex:1;padding:7px 10px;border:none;background:none;font-family:var(--font);font-size:13px;font-weight:500;color:var(--text3);cursor:pointer;border-radius:8px;transition:.15s;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
 .tab-btn:hover{color:var(--text)}
@@ -206,6 +196,7 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
 .tab-btn.on .tab-count{background:var(--accent-light);color:var(--accent)}
 .tab-pane{display:none}
 .tab-pane.on{display:block}
+/* COBRANÇAS */
 .cob-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 18px;margin-bottom:12px;transition:box-shadow .15s}
 .cob-card:hover{box-shadow:var(--shadow-lg);border-color:var(--border2)}
 .cob-card.quit{border-left:4px solid var(--accent)}
@@ -227,15 +218,20 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
 .prog-lbl{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:5px}
 .prog-bar{height:6px;background:var(--surface2);border-radius:6px;overflow:hidden}
 .prog-fill{height:100%;border-radius:6px;transition:width .4s}
-.prog-fill.v{background:var(--accent)}.prog-fill.a{background:#D4A520}.prog-fill.r{background:var(--danger)}
+.prog-fill.v{background:var(--accent)}
+.prog-fill.a{background:#D4A520}
+.prog-fill.r{background:var(--danger)}
 .parc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(42px,1fr));gap:6px;margin-top:8px}
 .pill{width:100%;aspect-ratio:1;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;cursor:pointer;border:none;transition:.15s;position:relative;font-family:var(--font)}
-.pill.pg{background:var(--accent-light);color:var(--accent)}.pill.pg:hover{background:#c5e8d8}
-.pill.pe{background:var(--surface2);color:var(--text3);border:1.5px dashed var(--border2)}.pill.pe:hover{border-color:var(--accent);color:var(--accent)}
+.pill.pg{background:var(--accent-light);color:var(--accent)}
+.pill.pg:hover{background:#c5e8d8}
+.pill.pe{background:var(--surface2);color:var(--text3);border:1.5px dashed var(--border2)}
+.pill.pe:hover{border-color:var(--accent);color:var(--accent)}
 .pill.at{background:var(--danger-light);color:var(--danger)}
 .pill-ck{font-size:8px;position:absolute;top:3px;right:3px}
 .cob-obs{margin-top:10px;padding:7px 10px;background:var(--warn-bg);color:var(--warn-text);border-left:3px solid #D4A520;border-radius:0 7px 7px 0;font-size:12px}
 .resumo-cobr{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+/* MOBILE */
 .mob-btn{display:none;width:36px;height:36px;background:none;border:1px solid var(--border);border-radius:8px;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);font-size:16px;flex-shrink:0}
 .sb-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:99}
 @media(max-width:720px){
@@ -256,383 +252,465 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
   .cob-vals{grid-template-columns:1fr 1fr}
   .resumo-cobr{grid-template-columns:1fr}
 }
-@media(max-width:400px){.form-grid-3{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr}}
-</style>
+@media(max-width:400px){.form-grid-3{grid-template-columns:1fr}.stats-row{grid-column:1fr}}
+/* ══ ESTOQUE ══ */
+.est-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.est-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px 18px;transition:box-shadow .15s,border-color .15s}
+.est-card:hover{box-shadow:var(--shadow-lg);border-color:var(--border2)}
+.est-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:10px}
+.est-nome{font-size:14px;font-weight:600;color:var(--text);line-height:1.3}
+.est-cod{display:inline-flex;align-items:center;gap:4px;background:var(--surface2);color:var(--text3);font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:6px;margin-top:3px}
+.est-actions{display:flex;gap:3px;flex-shrink:0}
+.est-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:12px}
+.est-spec{background:var(--bg);border-radius:8px;padding:7px 10px}
+.est-spec-lbl{font-size:10px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:.4px;margin-bottom:1px}
+.est-spec-val{font-size:13px;font-weight:500;color:var(--text)}
+.est-footer{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:11px;margin-top:4px}
+.est-preco{font-size:15px;font-weight:700;color:var(--accent)}
+.est-qtd-wrap{display:flex;align-items:center}
+.est-qtd-btn{width:28px;height:28px;border:1px solid var(--border);background:var(--surface);color:var(--text2);cursor:pointer;font-size:14px;font-weight:600;display:flex;align-items:center;justify-content:center;transition:background .12s;flex-shrink:0}
+.est-qtd-btn:first-child{border-radius:8px 0 0 8px}
+.est-qtd-btn:last-child{border-radius:0 8px 8px 0}
+.est-qtd-btn:hover{background:var(--bg);color:var(--text)}
+.est-qtd-num{min-width:36px;height:28px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--text);font-family:var(--mono);background:var(--surface)}
+.est-qtd-num.zero{color:var(--danger)}
+.est-forn{font-size:11px;color:var(--text3);margin-top:6px;display:flex;align-items:center;gap:4px}
+.est-resumo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.est-busca-bar{margin-bottom:18px}</style>
 </head>
 <body>
 
-<!-- TELA DE LOGIN -->
-<div class="login-screen" id="login-screen">
-  <div class="login-box">
-    <div class="login-logo">
-      <div class="login-logo-icon"><i class="fa-solid fa-eye"></i></div>
-      <div>
-        <div class="login-logo-name">Pochmann</div>
-        <div class="login-logo-sub">Gestão de Receitas</div>
-      </div>
-    </div>
-    <div class="login-title">Acesso restrito</div>
-    <div class="login-sub">Digite suas credenciais para continuar.</div>
-    <div class="login-erro" id="login-erro">
-      <i class="fa-solid fa-circle-xmark"></i>
-      <span>Usuário ou senha incorretos.</span>
-    </div>
-    <div class="login-group">
-      <label>Usuário</label>
-      <input type="text" id="login-user" placeholder="Digite seu usuário" autocomplete="username" onkeydown="if(event.key==='Enter')document.getElementById('login-pass').focus()">
-    </div>
-    <div class="login-group">
-      <label>Senha</label>
-      <input type="password" id="login-pass" placeholder="Digite sua senha" autocomplete="current-password" onkeydown="if(event.key==='Enter')fazerLogin()">
-    </div>
-    <button class="login-btn" id="login-btn" onclick="fazerLogin()">
-      <i class="fa-solid fa-right-to-bracket"></i> Entrar
-    </button>
-  </div>
-</div>
-
-<div class="ld on" id="ld"><div class="spin"></div><span id="ld-msg">Conectando ao banco de dados…</span></div>
-<div class="foto-viewer" id="fv"><button class="foto-viewer-close" onclick="fvF()"><i class="fa-solid fa-xmark"></i></button><img id="fv-img" src="" alt=""></div>
-<div class="sb-bg" id="sb-bg" onclick="sbF()"></div>
+<div class="foto-viewer" id="fv"><button class="foto-viewer-close" onclick="fvFechar()"><i class="fa-solid fa-xmark"></i></button><img id="fv-img" src="" alt=""></div>
+<div class="sb-bg" id="sb-bg" onclick="sbFechar()"></div>
 
 <div class="app">
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header"><div class="logo-wrap"><div class="logo-icon"><i class="fa-solid fa-eye"></i></div><div><div class="logo-name">Pochmann</div><div class="logo-sub">Gestão de Receitas</div></div></div></div>
-  <div class="sidebar-search"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="sb-busca" placeholder="Buscar por nome ou CPF…" oninput="listaF(this.value)"></div></div>
+  <div class="sidebar-search"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input type="text" id="sb-busca" placeholder="Buscar por nome ou CPF…" oninput="listaFiltrar(this.value)"></div></div>
   <div class="sidebar-nav">
     <div class="nav-label">Menu</div>
     <button class="nav-btn on" id="nav-dash" onclick="irDash()"><i class="fa-solid fa-chart-line"></i> Dashboard</button>
+    <button class="nav-btn" id="nav-est" onclick="irEstoque()"><i class="fa-solid fa-boxes-stacked"></i> Estoque de Lentes</button>
     <div class="div"></div>
     <div class="nav-label">Clientes</div>
   </div>
-  <div class="client-list-wrap" id="cl-lista"><div class="empty-sb"><i class="fa-regular fa-user"></i>Carregando…</div></div>
+  <div class="client-list-wrap" id="cl-lista"><div class="empty-sb"><i class="fa-regular fa-user"></i>Nenhum cliente</div></div>
   <div class="sidebar-footer">
-    <button class="btn-new-client" onclick="mA('m-cli');mcP(null)"><i class="fa-solid fa-user-plus"></i> Novo Cliente</button>
+    <button class="btn-new-client" onclick="modalAbrir('m-cliente');mcPrep(null)"><i class="fa-solid fa-user-plus"></i> Novo Cliente</button>
     <div style="display:flex;gap:6px;margin-top:8px">
       <button class="btn btn-secondary btn-sm" style="flex:1;justify-content:center" onclick="exportar()"><i class="fa-solid fa-download"></i> Exportar</button>
-      <button class="btn btn-secondary btn-sm" style="flex:1;justify-content:center" onclick="document.getElementById('imp-f').click()"><i class="fa-solid fa-upload"></i> Importar</button>
-      <input type="file" id="imp-f" accept=".json" style="display:none" onchange="impArq(this)">
+      <button class="btn btn-secondary btn-sm" style="flex:1;justify-content:center" onclick="document.getElementById('imp-file').click()"><i class="fa-solid fa-upload"></i> Importar</button>
+      <input type="file" id="imp-file" accept=".json" style="display:none" onchange="importarArq(this)">
     </div>
-    <button class="btn btn-secondary btn-sm" style="width:100%;justify-content:center;margin-top:8px;color:var(--danger);border-color:var(--danger-light)" onclick="fazerLogout()">
-      <i class="fa-solid fa-right-from-bracket"></i> Sair
-    </button>
   </div>
 </aside>
 
 <div class="main">
+  <!-- DASHBOARD -->
   <div id="v-dash" class="view on">
     <div class="main-header">
-      <button class="mob-btn" onclick="sbA()"><i class="fa-solid fa-bars"></i></button>
+      <button class="mob-btn" onclick="sbAbrir()"><i class="fa-solid fa-bars"></i></button>
       <div class="page-title">Dashboard</div>
-      <div class="header-actions"><button class="btn btn-primary btn-sm" onclick="mA('m-cli');mcP(null)"><i class="fa-solid fa-user-plus"></i> <span>Novo Cliente</span></button></div>
+      <div class="header-actions"><button class="btn btn-primary btn-sm" onclick="modalAbrir('m-cliente');mcPrep(null)"><i class="fa-solid fa-user-plus"></i> <span>Novo Cliente</span></button></div>
     </div>
     <div class="main-body" id="dash-body"></div>
   </div>
-  <div id="v-cli" class="view">
+  <!-- CLIENTE -->
+  <div id="v-cliente" class="view">
     <div class="main-header">
-      <button class="mob-btn" onclick="sbA()"><i class="fa-solid fa-bars"></i></button>
-      <div class="page-title" id="c-tit">—</div>
+      <button class="mob-btn" onclick="sbAbrir()"><i class="fa-solid fa-bars"></i></button>
+      <div class="page-title" id="c-titulo">—</div>
       <div class="header-actions">
-        <button class="btn btn-secondary btn-sm" onclick="mcE()"><i class="fa-solid fa-pen"></i> <span>Editar</span></button>
-        <button class="btn btn-danger btn-sm" onclick="cDelP()"><i class="fa-solid fa-trash"></i></button>
-        <button class="btn btn-primary btn-sm" id="btn-p" onclick="btnP()"><i class="fa-solid fa-plus" id="btn-pi"></i> <span id="btn-pt">Nova Receita</span></button>
+        <button class="btn btn-secondary btn-sm" onclick="mcEditar()"><i class="fa-solid fa-pen"></i> <span>Editar</span></button>
+        <button class="btn btn-danger btn-sm" onclick="cExcluirPedir()"><i class="fa-solid fa-trash"></i></button>
+        <button class="btn btn-primary btn-sm" id="btn-p" onclick="btnPrincipalClick()"><i class="fa-solid fa-plus" id="btn-p-i"></i> <span id="btn-p-t">Nova Receita</span></button>
       </div>
     </div>
     <div class="main-body">
-      <div class="card"><div id="c-perf"></div><div class="stats-row" id="c-stats"></div></div>
+      <div class="card"><div id="c-perfil"></div><div class="stats-row" id="c-stats"></div></div>
       <div class="tabs-bar">
-        <button class="tab-btn on" id="tb-rx" onclick="abaI('rx')"><i class="fa-solid fa-eye"></i> Receitas <span class="tab-count" id="tc-rx">0</span></button>
-        <button class="tab-btn" id="tb-cobr" onclick="abaI('cobr')"><i class="fa-solid fa-file-invoice-dollar"></i> Cobranças <span class="tab-count" id="tc-cobr">0</span></button>
-        <button class="tab-btn" id="tb-fotos" onclick="abaI('fotos')"><i class="fa-regular fa-image"></i> Fotos <span class="tab-count" id="tc-fotos">0</span></button>
+        <button class="tab-btn on" id="tb-rx" onclick="abaIr('rx')"><i class="fa-solid fa-eye"></i> Receitas <span class="tab-count" id="tc-rx">0</span></button>
+        <button class="tab-btn" id="tb-cobr" onclick="abaIr('cobr')"><i class="fa-solid fa-file-invoice-dollar"></i> Cobranças <span class="tab-count" id="tc-cobr">0</span></button>
+        <button class="tab-btn" id="tb-fotos" onclick="abaIr('fotos')"><i class="fa-regular fa-image"></i> Fotos <span class="tab-count" id="tc-fotos">0</span></button>
       </div>
-      <div class="tab-pane on" id="tp-rx"><div id="rx-l"></div></div>
-      <div class="tab-pane" id="tp-cobr"><div class="resumo-cobr" id="cobr-r"></div><div id="cobr-l"></div></div>
+      <div class="tab-pane on" id="tp-rx"><div id="rx-lista"></div></div>
+      <div class="tab-pane" id="tp-cobr"><div class="resumo-cobr" id="cobr-res"></div><div id="cobr-lista"></div></div>
       <div class="tab-pane" id="tp-fotos"><div class="card"><div class="card-header"><div><div class="card-title"><i class="fa-regular fa-image" style="margin-right:6px;color:var(--text3)"></i>Fotos das Receitas</div><div class="card-subtitle">Imagens do cliente</div></div></div><div class="fotos-grid" id="fotos-g"></div></div></div>
     </div>
   </div>
-</div>
-</div>
 
-<!-- MODAL CLIENTE -->
-<div class="modal-overlay" id="m-cli"><div class="modal">
-  <div class="modal-header"><div class="modal-title" id="mc-tit">Novo Cliente</div><button class="btn btn-ghost btn-icon btn-sm" onclick="mF('m-cli')"><i class="fa-solid fa-xmark"></i></button></div>
-  <div class="form-grid">
-    <div class="form-group full"><label>Nome completo <span class="req">*</span></label><input type="text" id="mc-nome" placeholder="Ex: Maria Oliveira da Silva"><div class="err-msg" id="ec-nome"></div></div>
-    <div class="form-group"><label>CPF</label><input type="text" id="mc-cpf" placeholder="000.000.000-00" maxlength="14" oninput="mCPF(this)"><div class="err-msg" id="ec-cpf"></div></div>
-    <div class="form-group"><label>RG</label><input type="text" id="mc-rg" placeholder="00.000.000-0"></div>
-    <div class="form-group"><label>Telefone</label><input type="text" id="mc-tel" placeholder="(00) 00000-0000" maxlength="15" oninput="mTel(this)"></div>
-    <div class="form-group"><label>E-mail</label><input type="email" id="mc-email" placeholder="email@exemplo.com"><div class="err-msg" id="ec-email"></div></div>
+  <!-- VIEW ESTOQUE -->
+  <div id="v-est" class="view">
+    <div class="main-header">
+      <button class="mob-btn" onclick="sbAbrir()"><i class="fa-solid fa-bars"></i></button>
+      <div class="page-title">Estoque de Lentes</div>
+      <div class="header-actions">
+        <button class="btn btn-primary btn-sm" onclick="estModalAbrir(null)">
+          <i class="fa-solid fa-plus"></i> <span>Novo Produto</span>
+        </button>
+      </div>
+    </div>
+    <div class="main-body">
+      <div class="est-resumo" id="est-resumo"></div>
+      <div class="est-busca-bar">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="est-busca" placeholder="Buscar por nome, código ou fornecedor…" oninput="estFiltrar(this.value)">
+        </div>
+      </div>
+      <div class="est-grid" id="est-grid"></div>
+    </div>
   </div>
-  <div class="modal-footer"><button class="btn btn-secondary" onclick="mF('m-cli')">Cancelar</button><button class="btn btn-primary" onclick="mcS()"><i class="fa-solid fa-check"></i> Salvar</button></div>
-</div></div>
+
+</div><!-- /main -->
+</div><!-- /app -->
+
+<!-- MODAL ESTOQUE -->
+<div class="modal-overlay" id="m-est">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="mest-titulo">Novo Produto</div>
+      <button class="btn btn-ghost btn-icon btn-sm" onclick="modalFechar('m-est')"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Nome do produto <span class="req">*</span></label>
+        <input type="text" id="est-nome" placeholder="Ex: Lente Transitions Multifocal">
+        <div class="err-msg" id="eest-nome"></div>
+      </div>
+      <div class="form-group">
+        <label>Código <span class="req">*</span></label>
+        <input type="text" id="est-cod" placeholder="Ex: LT-001" style="font-family:var(--mono)">
+        <div class="err-msg" id="eest-cod"></div>
+      </div>
+      <div class="form-group">
+        <label>Fornecedor</label>
+        <input type="text" id="est-forn" placeholder="Ex: Essilor, Zeiss…">
+      </div>
+      <div class="form-group">
+        <label>Quantidade em estoque <span class="req">*</span></label>
+        <input type="number" id="est-qtd" placeholder="0" min="0">
+        <div class="err-msg" id="eest-qtd"></div>
+      </div>
+      <div class="form-group">
+        <label>Preço de custo (R$)</label>
+        <input type="text" id="est-preco" placeholder="0,00" oninput="mMoeda(this)">
+      </div>
+    </div>
+    <div style="margin-top:14px">
+      <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px;display:flex;align-items:center;gap:6px">
+        <i class="fa-solid fa-eye" style="color:var(--accent)"></i> Especificações Ópticas
+      </div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Tipo de lente</label>
+          <select id="est-tipo">
+            <option value="">Selecione…</option>
+            <option>Monofocal</option>
+            <option>Bifocal</option>
+            <option>Multifocal / Progressiva</option>
+            <option>Lente de contato</option>
+            <option>Ocupacional</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Material</label>
+          <select id="est-mat">
+            <option value="">Selecione…</option>
+            <option>Orgânico (CR-39)</option>
+            <option>Policarbonato</option>
+            <option>Trivex</option>
+            <option>Alto índice 1.60</option>
+            <option>Alto índice 1.67</option>
+            <option>Alto índice 1.74</option>
+            <option>Vidro mineral</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tratamento</label>
+          <input type="text" id="est-trat" placeholder="Ex: Antirreflexo, Transitions…">
+        </div>
+        <div class="form-group">
+          <label>Índice de refração</label>
+          <input type="text" id="est-indice" placeholder="Ex: 1.60">
+        </div>
+        <div class="form-group">
+          <label>Grau esfera (faixa)</label>
+          <input type="text" id="est-esfera" placeholder="Ex: -6.00 a +4.00">
+        </div>
+        <div class="form-group">
+          <label>Grau cilindro (faixa)</label>
+          <input type="text" id="est-cilindro" placeholder="Ex: até -2.00">
+        </div>
+      </div>
+      <div class="form-group" style="margin-top:10px">
+        <label>Observações</label>
+        <textarea id="est-obs" placeholder="Informações adicionais…" style="min-height:60px"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="modalFechar('m-est')">Cancelar</button>
+      <button class="btn btn-primary" onclick="estSalvar()"><i class="fa-solid fa-check"></i> Salvar Produto</button>
+    </div>
+  </div>
+</div>
+<div class="modal-overlay" id="m-cliente">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="mc-titulo">Novo Cliente</div><button class="btn btn-ghost btn-icon btn-sm" onclick="modalFechar('m-cliente')"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="form-grid">
+      <div class="form-group full"><label>Nome completo <span class="req">*</span></label><input type="text" id="mc-nome" placeholder="Ex: Maria Oliveira da Silva"><div class="err-msg" id="ec-nome"></div></div>
+      <div class="form-group"><label>CPF</label><input type="text" id="mc-cpf" placeholder="000.000.000-00" maxlength="14" oninput="mCPF(this)"><div class="err-msg" id="ec-cpf"></div></div>
+      <div class="form-group"><label>RG</label><input type="text" id="mc-rg" placeholder="00.000.000-0"></div>
+      <div class="form-group"><label>Telefone</label><input type="text" id="mc-tel" placeholder="(00) 00000-0000" maxlength="15" oninput="mTel(this)"></div>
+      <div class="form-group"><label>E-mail</label><input type="email" id="mc-email" placeholder="email@exemplo.com"><div class="err-msg" id="ec-email"></div></div>
+    </div>
+    <div class="modal-footer"><button class="btn btn-secondary" onclick="modalFechar('m-cliente')">Cancelar</button><button class="btn btn-primary" onclick="mcSalvar()"><i class="fa-solid fa-check"></i> Salvar</button></div>
+  </div>
+</div>
 
 <!-- MODAL RECEITA -->
-<div class="modal-overlay" id="m-rx"><div class="modal">
-  <div class="modal-header"><div class="modal-title" id="mrx-tit">Nova Receita</div><button class="btn btn-ghost btn-icon btn-sm" onclick="mF('m-rx')"><i class="fa-solid fa-xmark"></i></button></div>
-  <div class="form-group" style="margin-bottom:14px;max-width:200px"><label>Data <span class="req">*</span></label><input type="date" id="rx-dt"><div class="err-msg" id="erx-dt"></div></div>
-  <div class="rx-section"><div class="rx-label"><i class="fa-solid fa-circle-right" style="color:#0087C8"></i> Olho Direito (OD)</div>
-    <div class="form-grid-3">
-      <div class="form-group"><label>Esfera</label><input type="text" class="rx" id="rx-ode" placeholder="+0.00"></div>
-      <div class="form-group"><label>Cilindro</label><input type="text" class="rx" id="rx-odc" placeholder="-0.00"></div>
-      <div class="form-group"><label>Eixo (°)</label><input type="text" class="rx" id="rx-odx" placeholder="0"></div>
+<div class="modal-overlay" id="m-rx">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="mrx-titulo">Nova Receita</div><button class="btn btn-ghost btn-icon btn-sm" onclick="modalFechar('m-rx')"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="form-group" style="margin-bottom:14px;max-width:200px"><label>Data <span class="req">*</span></label><input type="date" id="rx-dt"><div class="err-msg" id="erx-dt"></div></div>
+    <div class="rx-section">
+      <div class="rx-label"><i class="fa-solid fa-circle-right" style="color:#0087C8"></i> Olho Direito (OD)</div>
+      <div class="form-grid-3">
+        <div class="form-group"><label>Esfera</label><input type="text" class="rx" id="rx-od-e" placeholder="+0.00"></div>
+        <div class="form-group"><label>Cilindro</label><input type="text" class="rx" id="rx-od-c" placeholder="-0.00"></div>
+        <div class="form-group"><label>Eixo (°)</label><input type="text" class="rx" id="rx-od-x" placeholder="0"></div>
+      </div>
     </div>
-  </div>
-  <div class="rx-section"><div class="rx-label"><i class="fa-solid fa-circle-left" style="color:#00A67E"></i> Olho Esquerdo (OE)</div>
-    <div class="form-grid-3">
-      <div class="form-group"><label>Esfera</label><input type="text" class="rx" id="rx-oee" placeholder="+0.00"></div>
-      <div class="form-group"><label>Cilindro</label><input type="text" class="rx" id="rx-oec" placeholder="-0.00"></div>
-      <div class="form-group"><label>Eixo (°)</label><input type="text" class="rx" id="rx-oex" placeholder="0"></div>
+    <div class="rx-section">
+      <div class="rx-label"><i class="fa-solid fa-circle-left" style="color:#00A67E"></i> Olho Esquerdo (OE)</div>
+      <div class="form-grid-3">
+        <div class="form-group"><label>Esfera</label><input type="text" class="rx" id="rx-oe-e" placeholder="+0.00"></div>
+        <div class="form-group"><label>Cilindro</label><input type="text" class="rx" id="rx-oe-c" placeholder="-0.00"></div>
+        <div class="form-group"><label>Eixo (°)</label><input type="text" class="rx" id="rx-oe-x" placeholder="0"></div>
+      </div>
     </div>
-  </div>
-  <div class="rx-section"><div class="rx-label"><i class="fa-solid fa-plus" style="color:#9B59B6"></i> Adição / Observações</div>
-    <div class="form-grid">
-      <div class="form-group"><label>Adição</label><input type="text" class="rx" id="rx-adic" placeholder="+0.00"></div>
-      <div class="form-group"><label>Observações</label><textarea id="rx-obs" style="min-height:58px"></textarea></div>
+    <div class="rx-section">
+      <div class="rx-label"><i class="fa-solid fa-plus" style="color:#9B59B6"></i> Adição / Observações</div>
+      <div class="form-grid">
+        <div class="form-group"><label>Adição</label><input type="text" class="rx" id="rx-adic" placeholder="+0.00"></div>
+        <div class="form-group"><label>Observações</label><textarea id="rx-obs" placeholder="Médico, anotações…" style="min-height:58px"></textarea></div>
+      </div>
     </div>
+    <div class="modal-footer"><button class="btn btn-secondary" onclick="modalFechar('m-rx')">Cancelar</button><button class="btn btn-primary" onclick="rxSalvar()"><i class="fa-solid fa-check"></i> Salvar Receita</button></div>
   </div>
-  <div class="modal-footer"><button class="btn btn-secondary" onclick="mF('m-rx')">Cancelar</button><button class="btn btn-primary" onclick="rxS()"><i class="fa-solid fa-check"></i> Salvar Receita</button></div>
-</div></div>
+</div>
 
 <!-- MODAL COBRANÇA -->
-<div class="modal-overlay" id="m-cobr"><div class="modal">
-  <div class="modal-header"><div class="modal-title" id="mcob-tit">Nova Cobrança</div><button class="btn btn-ghost btn-icon btn-sm" onclick="mF('m-cobr')"><i class="fa-solid fa-xmark"></i></button></div>
-  <div class="form-grid">
-    <div class="form-group full"><label>Produto / Descrição <span class="req">*</span></label><input type="text" id="cb-prod" placeholder="Ex: Óculos grau multifocal…"><div class="err-msg" id="ecb-prod"></div></div>
-    <div class="form-group"><label>Valor total (R$) <span class="req">*</span></label><input type="text" id="cb-val" placeholder="0,00" oninput="mMoeda(this)"><div class="err-msg" id="ecb-val"></div></div>
-    <div class="form-group"><label>Nº de parcelas <span class="req">*</span></label><input type="number" id="cb-np" placeholder="Ex: 3" min="1" max="60" oninput="cbPrev()"><div class="err-msg" id="ecb-np"></div></div>
-    <div class="form-group"><label>Data da 1ª parcela</label><input type="date" id="cb-dt1"></div>
-    <div class="form-group"><label>Data de compra</label><input type="date" id="cb-dtc"></div>
+<div class="modal-overlay" id="m-cobr">
+  <div class="modal">
+    <div class="modal-header"><div class="modal-title" id="mcob-titulo">Nova Cobrança</div><button class="btn btn-ghost btn-icon btn-sm" onclick="modalFechar('m-cobr')"><i class="fa-solid fa-xmark"></i></button></div>
+    <div class="form-grid">
+      <div class="form-group full"><label>Produto / Descrição <span class="req">*</span></label><input type="text" id="cb-prod" placeholder="Ex: Óculos grau multifocal…"><div class="err-msg" id="ecb-prod"></div></div>
+      <div class="form-group"><label>Valor total (R$) <span class="req">*</span></label><input type="text" id="cb-val" placeholder="0,00" oninput="mMoeda(this)"><div class="err-msg" id="ecb-val"></div></div>
+      <div class="form-group"><label>Nº de parcelas <span class="req">*</span></label><input type="number" id="cb-np" placeholder="Ex: 3" min="1" max="60" oninput="cbPreview()"><div class="err-msg" id="ecb-np"></div></div>
+      <div class="form-group"><label>Data da 1ª parcela</label><input type="date" id="cb-dt1"></div>
+      <div class="form-group"><label>Data de compra</label><input type="date" id="cb-dtc"></div>
+    </div>
+    <div id="cb-prev" style="display:none;background:var(--accent-light);border-radius:var(--radius);padding:10px 14px;margin-top:4px;font-size:13px;color:var(--accent);font-weight:500"><i class="fa-solid fa-calculator" style="margin-right:6px"></i><span id="cb-prev-t"></span></div>
+    <div class="form-group" style="margin-top:12px"><label>Observações</label><textarea id="cb-obs" style="min-height:58px"></textarea></div>
+    <div class="modal-footer"><button class="btn btn-secondary" onclick="modalFechar('m-cobr')">Cancelar</button><button class="btn btn-primary" onclick="cbSalvar()"><i class="fa-solid fa-check"></i> Salvar Cobrança</button></div>
   </div>
-  <div id="cb-prev" style="display:none;background:var(--accent-light);border-radius:var(--radius);padding:10px 14px;margin-top:4px;font-size:13px;color:var(--accent);font-weight:500"><i class="fa-solid fa-calculator" style="margin-right:6px"></i><span id="cb-prev-t"></span></div>
-  <div class="form-group" style="margin-top:12px"><label>Observações</label><textarea id="cb-obs" style="min-height:58px"></textarea></div>
-  <div class="modal-footer"><button class="btn btn-secondary" onclick="mF('m-cobr')">Cancelar</button><button class="btn btn-primary" onclick="cbS()"><i class="fa-solid fa-check"></i> Salvar Cobrança</button></div>
-</div></div>
+</div>
 
 <!-- MODAL PARCELA -->
-<div class="modal-overlay" id="m-parc"><div class="parc-box">
-  <div class="modal-header" style="margin-bottom:16px"><div class="modal-title" id="mp-tit">Parcela 1</div><button class="btn btn-ghost btn-icon btn-sm" onclick="mF('m-parc')"><i class="fa-solid fa-xmark"></i></button></div>
-  <div id="mp-info" style="background:var(--bg);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.8"></div>
-  <div class="form-group" style="margin-bottom:14px"><label>Data do pagamento</label><input type="date" id="mp-dt"></div>
-  <div class="form-group" style="margin-bottom:16px"><label>Observação</label><input type="text" id="mp-obs" placeholder="Ex: Pago em PIX…"></div>
-  <div style="display:flex;gap:8px">
-    <button class="btn btn-secondary" style="flex:1;justify-content:center" onclick="mF('m-parc')">Cancelar</button>
-    <button class="btn btn-danger btn-sm" id="btn-desm" style="display:none" onclick="parcD()"><i class="fa-solid fa-rotate-left"></i> Desmarcar</button>
-    <button class="btn btn-primary" style="flex:1;justify-content:center" id="btn-pgto" onclick="parcC()"><i class="fa-solid fa-check"></i> Confirmar</button>
+<div class="modal-overlay" id="m-parc">
+  <div class="parc-box">
+    <div class="modal-header" style="margin-bottom:16px"><div class="modal-title" id="mp-titulo">Parcela 1</div><button class="btn btn-ghost btn-icon btn-sm" onclick="modalFechar('m-parc')"><i class="fa-solid fa-xmark"></i></button></div>
+    <div id="mp-info" style="background:var(--bg);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.8"></div>
+    <div class="form-group" style="margin-bottom:14px"><label>Data do pagamento</label><input type="date" id="mp-dt"></div>
+    <div class="form-group" style="margin-bottom:16px"><label>Observação</label><input type="text" id="mp-obs" placeholder="Ex: Pago em PIX…"></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-secondary" style="flex:1;justify-content:center" onclick="modalFechar('m-parc')">Cancelar</button>
+      <button class="btn btn-danger btn-sm" id="btn-desm" style="display:none" onclick="parcDesmarcar()"><i class="fa-solid fa-rotate-left"></i> Desmarcar</button>
+      <button class="btn btn-primary" style="flex:1;justify-content:center" id="btn-pgto" onclick="parcConfirmar()"><i class="fa-solid fa-check"></i> Confirmar</button>
+    </div>
   </div>
-</div></div>
+</div>
 
 <!-- MODAL CONFIRMAR -->
-<div class="modal-overlay" id="m-conf"><div class="confirm-box">
-  <div class="confirm-icon"><i class="fa-solid fa-trash"></i></div>
-  <div class="confirm-title" id="mct">Confirmar exclusão</div>
-  <div class="confirm-msg" id="mcm">Esta ação não pode ser desfeita.</div>
-  <div class="confirm-btns"><button class="btn btn-secondary" onclick="mF('m-conf')">Cancelar</button><button class="btn btn-danger" id="mcb">Excluir</button></div>
-</div></div>
+<div class="modal-overlay" id="m-conf">
+  <div class="confirm-box">
+    <div class="confirm-icon"><i class="fa-solid fa-trash"></i></div>
+    <div class="confirm-title" id="mconf-t">Confirmar exclusão</div>
+    <div class="confirm-msg" id="mconf-m">Esta ação não pode ser desfeita.</div>
+    <div class="confirm-btns"><button class="btn btn-secondary" onclick="modalFechar('m-conf')">Cancelar</button><button class="btn btn-danger" id="mconf-btn">Excluir</button></div>
+  </div>
+</div>
 
 <!-- MODAL IMPORTAR -->
-<div class="modal-overlay" id="m-imp"><div class="confirm-box" style="width:420px;text-align:left">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><div class="confirm-icon" style="background:var(--accent-light);color:var(--accent);margin:0;flex-shrink:0"><i class="fa-solid fa-upload"></i></div><div><div class="confirm-title" style="text-align:left">Importar Backup</div><div style="font-size:12px;color:var(--text3);margin-top:2px" id="imp-fn">—</div></div></div>
-  <div id="imp-sum" style="background:var(--bg);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.8"></div>
-  <div style="background:var(--warn-bg);border-left:3px solid #D4A520;border-radius:0 8px 8px 0;padding:10px 12px;font-size:12px;color:var(--warn-text);margin-bottom:16px"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>Atenção:</strong> escolha como importar.</div>
-  <label class="imp-opt" id="imp-lm" onclick="impM('merge')"><input type="radio" name="imp-modo" value="merge" checked style="margin-top:2px;accent-color:var(--accent)"><div><div style="font-size:13px;font-weight:500">Mesclar com dados existentes</div><div style="font-size:11px;color:var(--text3);margin-top:2px">Adiciona sem apagar os dados atuais.</div></div></label>
-  <label class="imp-opt" id="imp-lr" onclick="impM('replace')"><input type="radio" name="imp-modo" value="replace" style="margin-top:2px;accent-color:var(--accent)"><div><div style="font-size:13px;font-weight:500;color:var(--danger)">Substituir todos os dados</div><div style="font-size:11px;color:var(--text3);margin-top:2px">Apaga tudo e substitui pelo backup.</div></div></label>
-  <div class="confirm-btns" style="margin-top:16px"><button class="btn btn-secondary" onclick="mF('m-imp');impP=null">Cancelar</button><button class="btn btn-primary" onclick="impEx()"><i class="fa-solid fa-check"></i> Confirmar</button></div>
-</div></div>
+<div class="modal-overlay" id="m-imp">
+  <div class="confirm-box" style="width:420px;text-align:left">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px"><div class="confirm-icon" style="background:var(--accent-light);color:var(--accent);margin:0;flex-shrink:0"><i class="fa-solid fa-upload"></i></div><div><div class="confirm-title" style="text-align:left">Importar Backup</div><div style="font-size:12px;color:var(--text3);margin-top:2px" id="imp-fn">—</div></div></div>
+    <div id="imp-sum" style="background:var(--bg);border-radius:var(--radius);padding:12px 14px;margin-bottom:14px;font-size:13px;line-height:1.8"></div>
+    <div style="background:var(--warn-bg);border-left:3px solid #D4A520;border-radius:0 8px 8px 0;padding:10px 12px;font-size:12px;color:var(--warn-text);margin-bottom:16px"><i class="fa-solid fa-triangle-exclamation" style="margin-right:5px"></i><strong>Atenção:</strong> escolha como importar.</div>
+    <label class="imp-opt" id="imp-lm" onclick="impModo('merge')"><input type="radio" name="imp-modo" value="merge" checked style="margin-top:2px;accent-color:var(--accent)"><div><div style="font-size:13px;font-weight:500">Mesclar com dados existentes</div><div style="font-size:11px;color:var(--text3);margin-top:2px">Adiciona sem apagar os dados atuais.</div></div></label>
+    <label class="imp-opt" id="imp-lr" onclick="impModo('replace')"><input type="radio" name="imp-modo" value="replace" style="margin-top:2px;accent-color:var(--accent)"><div><div style="font-size:13px;font-weight:500;color:var(--danger)">Substituir todos os dados</div><div style="font-size:11px;color:var(--text3);margin-top:2px">Apaga tudo e substitui pelo backup.</div></div></label>
+    <div class="confirm-btns" style="margin-top:16px"><button class="btn btn-secondary" onclick="modalFechar('m-imp');impPend=null">Cancelar</button><button class="btn btn-primary" onclick="impExecutar()"><i class="fa-solid fa-check"></i> Confirmar</button></div>
+  </div>
+</div>
 
 <div class="toast" id="toast"><i id="ti" class="fa-solid fa-circle-check"></i><span id="tm"></span></div>
 
 <script>
 'use strict';
-/* ══════════════════════════════════════
-   SUPABASE CONFIG
-══════════════════════════════════════ */
-const SB  = 'https://utnmhvvrseizvinjkzdf.supabase.co';
-const KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV0bm1odnZyc2VpenZpbmpremRmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyMTMxODUsImV4cCI6MjA5Mzc4OTE4NX0.xQ4ms7D2ug1HjH3793G4hEvAdcbHUFaG1gv3hjuUEBQ';
-const H   = {'apikey':KEY,'Authorization':'Bearer '+KEY,'Content-Type':'application/json','Prefer':'return=representation'};
 
-async function sbG(t,q=''){ const r=await fetch(`${SB}/rest/v1/${t}?${q}`,{headers:H}); if(!r.ok) throw new Error(await r.text()); return r.json(); }
-async function sbP(t,b){ const r=await fetch(`${SB}/rest/v1/${t}`,{method:'POST',headers:H,body:JSON.stringify(b)}); if(!r.ok) throw new Error(await r.text()); return r.json(); }
-async function sbU(t,id,b){ const r=await fetch(`${SB}/rest/v1/${t}?id=eq.${id}`,{method:'PATCH',headers:H,body:JSON.stringify(b)}); if(!r.ok) throw new Error(await r.text()); return r.json(); }
-async function sbD(t,id){ const r=await fetch(`${SB}/rest/v1/${t}?id=eq.${id}`,{method:'DELETE',headers:H}); if(!r.ok) throw new Error(await r.text()); }
-async function sbDW(t,f,v){ const r=await fetch(`${SB}/rest/v1/${t}?${f}=eq.${v}`,{method:'DELETE',headers:H}); if(!r.ok) throw new Error(await r.text()); }
+/* ── DB em JSON/localStorage ── */
+const DBK = 'pochmann_v5';
+function dbLoad(){ try{ const r=localStorage.getItem(DBK); if(r) return JSON.parse(r); }catch(e){} return {clientes:[],receitas:[],cobr:[],parcelas:[],fotos:[],seq:{c:1,r:1,cb:1,p:1,f:1}}; }
+function dbSave(){ try{ localStorage.setItem(DBK,JSON.stringify(D)); }catch(e){ toastShow('Erro ao salvar! localStorage cheio?','error'); } }
+let D = dbLoad();
+function nid(k){ const v=D.seq[k]||1; D.seq[k]=v+1; return v; }
 
-/* ══════════════════════════════════════
-   ESTADO
-══════════════════════════════════════ */
-let CA=null,editC=null,editR=null,editCob=null,parcAt=null,impP=null,ttm=null,abaAt='rx';
+/* ── Estado ── */
+let CA=null, editC=null, editR=null, editCob=null, parcAtual=null, impPend=null, toastTm=null, abaAt='rx';
 
-/* ══════════════════════════════════════
-   UTILITÁRIOS
-══════════════════════════════════════ */
-const esc=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const ini=n=>(n||'?').split(' ').filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join('');
-const hj=()=>{const n=new Date();return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`;};
-const fd=d=>{if(!d)return '—';const p=d.split('-');return p.length===3?`${p[2]}/${p[1]}/${p[0]}`:d;};
-const brl=n=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n||0);
-const gv=id=>document.getElementById(id).value.trim();
-const sv=(id,v)=>{document.getElementById(id).value=v||'';};
-const cls=(id,c,on)=>document.getElementById(id).classList[on?'add':'remove'](c);
+/* ── Helpers ── */
+const gc  = id  => D.clientes.find(c=>c.id===id);
+const grx = cid => D.receitas.filter(r=>r.cid===cid).sort((a,b)=>b.dt>a.dt?1:-1);
+const gcob= cid => D.cobr.filter(c=>c.cid===cid).sort((a,b)=>b.id-a.id);
+const gpar= cid => D.parcelas.filter(p=>p.cbid===cid);
+const gf  = cid => D.fotos.filter(f=>f.cid===cid);
+const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const ini = n => (n||'?').split(' ').filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join('');
+const hj  = () => { const n=new Date(); return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`; };
+const fd  = d => { if(!d)return '—'; const p=d.split('-'); return p.length===3?`${p[2]}/${p[1]}/${p[0]}`:d; };
+const brl = n => new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(n||0);
+const gv  = id => document.getElementById(id).value.trim();
+const sv  = (id,v) => document.getElementById(id).value=v||'';
+const cls = (id,c,on) => document.getElementById(id).classList[on?'add':'remove'](c);
 
-/* ══════════════════════════════════════
-   LOADING
-══════════════════════════════════════ */
-function ldOn(m='Aguarde…'){const el=document.getElementById('ld');document.getElementById('ld-msg').textContent=m;el.classList.add('on');}
-function ldOff(){document.getElementById('ld').classList.remove('on');}
+/* ── MODAL ── */
+function modalAbrir(id)  { document.getElementById(id).classList.add('on'); }
+function modalFechar(id) { document.getElementById(id).classList.remove('on'); }
+document.querySelectorAll('.modal-overlay').forEach(o=>{
+  o.addEventListener('click',e=>{ if(e.target===o) modalFechar(o.id); });
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    ['m-conf','m-rx','m-cliente','m-imp','m-cobr','m-parc'].forEach(modalFechar);
+    fvFechar(); impPend=null;
+  }
+});
 
-/* ══════════════════════════════════════
-   MODAL
-══════════════════════════════════════ */
-function mA(id){document.getElementById(id).classList.add('on');}
-function mF(id){document.getElementById(id).classList.remove('on');}
-document.querySelectorAll('.modal-overlay').forEach(o=>{o.addEventListener('click',e=>{if(e.target===o)mF(o.id);});});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){['m-conf','m-rx','m-cli','m-imp','m-cobr','m-parc'].forEach(mF);fvF();impP=null;}});
-
-/* ══════════════════════════════════════
-   TOAST
-══════════════════════════════════════ */
-function toast(m,t='success'){
+/* ── TOAST ── */
+function toastShow(m,t='success'){
   const el=document.getElementById('toast');
   document.getElementById('ti').className=t==='error'?'fa-solid fa-circle-xmark':t==='info'?'fa-solid fa-circle-info':'fa-solid fa-circle-check';
   document.getElementById('tm').textContent=m;
   el.className=`toast ${t} on`;
-  if(ttm)clearTimeout(ttm);
-  ttm=setTimeout(()=>el.classList.remove('on'),3500);
+  if(toastTm)clearTimeout(toastTm);
+  toastTm=setTimeout(()=>el.classList.remove('on'),3500);
 }
 
-/* ══════════════════════════════════════
-   VIEWS
-══════════════════════════════════════ */
-function vOn(id){document.querySelectorAll('.view').forEach(v=>v.classList.remove('on'));document.getElementById(id).classList.add('on');}
-function sbA(){cls('sidebar','on',true);cls('sb-bg','on',true);}
-function sbF(){cls('sidebar','on',false);cls('sb-bg','on',false);}
-function fvA(src){document.getElementById('fv-img').src=src;cls('fv','on',true);}
-function fvF(){cls('fv','on',false);}
+/* ── VIEWS ── */
+function viewOn(id){ document.querySelectorAll('.view').forEach(v=>v.classList.remove('on')); document.getElementById(id).classList.add('on'); }
 
-/* ══════════════════════════════════════
-   INIT
-══════════════════════════════════════ */
-async function init(){
-  try{
-    await sbG('clientes','limit=1');
-    ldOff();
-    await listaR();
-    await dashR();
-  }catch(e){
-    document.getElementById('ld').innerHTML=`<div style="text-align:center;padding:24px;max-width:400px">
-      <div style="font-size:36px;margin-bottom:12px">⚠️</div>
-      <div style="font-size:15px;font-weight:600;margin-bottom:8px">Erro de conexão</div>
-      <div style="font-size:13px;color:var(--text2);margin-bottom:12px">Não foi possível conectar ao banco de dados.<br>Verifique se as tabelas foram criadas no Supabase.</div>
-      <div style="font-size:11px;font-family:monospace;background:#fee;padding:10px;border-radius:8px;color:var(--danger)">${e.message}</div>
-    </div>`;
-    document.getElementById('ld').classList.add('on');
+/* ── SIDEBAR ── */
+function sbAbrir(){ cls('sidebar','on',true); cls('sb-bg','on',true); }
+function sbFechar(){ cls('sidebar','on',false); cls('sb-bg','on',false); }
+
+/* ── FOTO VIEWER ── */
+function fvAbrir(dados){ document.getElementById('fv-img').src=dados; cls('fv','on',true); }
+function fvFechar(){ cls('fv','on',false); }
+
+/* ── DASHBOARD ── */
+function irDash(){
+  CA=null;
+  cls('nav-dash','on',true);
+  viewOn('v-dash');
+  listaRender();
+  dashRender();
+}
+
+function dashRender(){
+  const totalC=D.clientes.length, totalR=D.receitas.length;
+  const rec=D.receitas.map(r=>({...r,_c:gc(r.cid)})).filter(r=>r._c).sort((a,b)=>b.dt>a.dt?1:-1).slice(0,8);
+  const body=document.getElementById('dash-body');
+  if(!totalC){
+    body.innerHTML=`<div class="welcome"><div class="welcome-icon"><i class="fa-solid fa-eye"></i></div><h2>Bem-vindo à Pochmann</h2><p>Cadastre o primeiro cliente para começar.</p><button class="btn btn-primary" style="margin-top:8px" onclick="modalAbrir('m-cliente');mcPrep(null)"><i class="fa-solid fa-user-plus"></i> Cadastrar Primeiro Cliente</button></div>`;
+    return;
   }
+  body.innerHTML=`
+    <div class="stats-row" style="grid-template-columns:repeat(2,1fr);max-width:360px">
+      <div class="stat-card"><div class="stat-label">Total de Clientes</div><div class="stat-value green">${totalC}</div></div>
+      <div class="stat-card"><div class="stat-label">Total de Receitas</div><div class="stat-value">${totalR}</div></div>
+    </div>
+    <div class="card"><div class="card-header"><div><div class="card-title">Receitas Recentes</div><div class="card-subtitle">Últimas prescrições</div></div></div>
+    ${rec.length?`<div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Cliente</th><th>Data</th><th>OD Esfera</th><th>OE Esfera</th></tr></thead><tbody>
+    ${rec.map(r=>`<tr class="link" onclick="irCliente(${r.cid})"><td style="font-weight:500">${esc(r._c.nome)}</td><td style="color:var(--text3);font-family:var(--mono);font-size:12px">${fd(r.dt)}</td><td style="font-family:var(--mono);font-size:12px">${esc(r.ode||'—')}</td><td style="font-family:var(--mono);font-size:12px">${esc(r.oee||'—')}</td></tr>`).join('')}
+    </tbody></table></div>`:`<div class="empty" style="padding:28px 0"><i class="fa-regular fa-file-lines"></i><h3>Nenhuma receita ainda</h3></div>`}
+    </div>`;
 }
 
-/* ══════════════════════════════════════
-   DASHBOARD
-══════════════════════════════════════ */
-async function irDash(){
-  CA=null; cls('nav-dash','on',true); vOn('v-dash');
-  await listaR(); await dashR();
+/* ── LISTA CLIENTES ── */
+function listaRender(f=''){
+  const fl=f.toLowerCase().trim();
+  const cl=D.clientes.filter(c=>!fl||c.nome.toLowerCase().includes(fl)||(c.cpf||'').includes(fl)).sort((a,b)=>a.nome.localeCompare(b.nome));
+  const el=document.getElementById('cl-lista');
+  if(!cl.length){ el.innerHTML=`<div class="empty-sb"><i class="fa-regular fa-user"></i>${fl?'Sem resultados':'Nenhum cliente'}</div>`; return; }
+  el.innerHTML=cl.map(c=>{
+    const n=D.receitas.filter(r=>r.cid===c.id).length;
+    const s=CA&&CA.id===c.id?'sel':'';
+    return `<div class="client-item ${s}" onclick="irCliente(${c.id})"><div class="client-avatar">${ini(c.nome)}</div><div class="client-info"><div class="client-name">${esc(c.nome)}</div><div class="client-doc">${esc(c.cpf||c.rg||'—')}</div></div><span class="client-rx-badge">${n} rx</span></div>`;
+  }).join('');
+}
+function listaFiltrar(v){ listaRender(v); }
+
+/* ── CLIENTE ── */
+function irCliente(id){
+  sbFechar();
+  CA=gc(id); if(!CA) return;
+  cls('nav-dash','on',false);
+  document.getElementById('c-titulo').textContent=CA.nome;
+  viewOn('v-cliente');
+  listaRender(document.getElementById('sb-busca').value);
+  cPerfilRender();
+  rxRender();
+  cobrRender();
+  fotosRender();
+  tcAtualizar();
+  abaIr('rx');
 }
 
-async function dashR(){
-  try{
-    const [cl,rx]=await Promise.all([sbG('clientes','select=id'),sbG('receitas','select=id,cid,dt,ode,oee&order=dt.desc&limit=8')]);
-    const body=document.getElementById('dash-body');
-    if(!cl.length){body.innerHTML=`<div class="welcome"><div class="welcome-icon"><i class="fa-solid fa-eye"></i></div><h2>Bem-vindo à Pochmann</h2><p>Cadastre o primeiro cliente para começar.</p><button class="btn btn-primary" style="margin-top:8px" onclick="mA('m-cli');mcP(null)"><i class="fa-solid fa-user-plus"></i> Cadastrar Primeiro Cliente</button></div>`;return;}
-    // Buscar nomes
-    const nomes={};
-    if(rx.length){
-      const ids=[...new Set(rx.map(r=>r.cid))];
-      const cs=await sbG('clientes',`id=in.(${ids.join(',')})&select=id,nome`);
-      cs.forEach(c=>nomes[c.id]=c.nome);
-    }
-    body.innerHTML=`
-      <div class="stats-row" style="grid-template-columns:repeat(2,1fr);max-width:360px">
-        <div class="stat-card"><div class="stat-label">Total de Clientes</div><div class="stat-value green">${cl.length}</div></div>
-        <div class="stat-card"><div class="stat-label">Total de Receitas</div><div class="stat-value">${rx.length}</div></div>
-      </div>
-      <div class="card"><div class="card-header"><div><div class="card-title">Receitas Recentes</div><div class="card-subtitle">Últimas prescrições</div></div></div>
-      ${rx.length?`<div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Cliente</th><th>Data</th><th>OD Esfera</th><th>OE Esfera</th></tr></thead><tbody>
-      ${rx.map(r=>`<tr class="link" onclick="irCli(${r.cid})"><td style="font-weight:500">${esc(nomes[r.cid]||'—')}</td><td style="color:var(--text3);font-family:var(--mono);font-size:12px">${fd(r.dt)}</td><td style="font-family:var(--mono);font-size:12px">${esc(r.ode||'—')}</td><td style="font-family:var(--mono);font-size:12px">${esc(r.oee||'—')}</td></tr>`).join('')}
-      </tbody></table></div>`:`<div class="empty" style="padding:28px 0"><i class="fa-regular fa-file-lines"></i><h3>Nenhuma receita ainda</h3></div>`}
-      </div>`;
-  }catch(e){console.error(e);}
-}
-
-/* ══════════════════════════════════════
-   LISTA CLIENTES
-══════════════════════════════════════ */
-async function listaR(f=''){
-  try{
-    let q='select=*&order=nome.asc';
-    if(f.trim()){const enc=encodeURIComponent(`%${f.trim()}%`);q+=`&or=(nome.ilike.${enc},cpf.ilike.${enc})`;}
-    const cl=await sbG('clientes',q);
-    const rx=await sbG('receitas','select=cid');
-    const cnt={};rx.forEach(r=>{cnt[r.cid]=(cnt[r.cid]||0)+1;});
-    const el=document.getElementById('cl-lista');
-    if(!cl.length){el.innerHTML=`<div class="empty-sb"><i class="fa-regular fa-user"></i>${f?'Sem resultados':'Nenhum cliente'}</div>`;return;}
-    el.innerHTML=cl.map(c=>`<div class="client-item ${CA&&CA.id===c.id?'on':''}" onclick="irCli(${c.id})"><div class="client-avatar">${ini(c.nome)}</div><div class="client-info"><div class="client-name">${esc(c.nome)}</div><div class="client-doc">${esc(c.cpf||c.rg||'—')}</div></div><span class="client-rx-badge">${cnt[c.id]||0} rx</span></div>`).join('');
-  }catch(e){console.error(e);}
-}
-function listaF(v){listaR(v);}
-
-/* ══════════════════════════════════════
-   IR PARA CLIENTE
-══════════════════════════════════════ */
-async function irCli(id){
-  sbF(); ldOn('Carregando cliente…');
-  try{
-    const rows=await sbG('clientes',`id=eq.${id}&limit=1`);
-    if(!rows.length)return;
-    CA=rows[0]; cls('nav-dash','on',false);
-    document.getElementById('c-tit').textContent=CA.nome;
-    vOn('v-cli');
-    await listaR(document.getElementById('sb-busca').value);
-    await Promise.all([cPerfR(),rxR(),cobrR(),fotosR()]);
-    tcAt(); abaI('rx');
-  }catch(e){toast('Erro ao carregar cliente.','error');console.error(e);}
-  finally{ldOff();}
-}
-
-async function cPerfR(){
-  const rx=await sbG('receitas',`cid=eq.${CA.id}&order=dt.desc`);
-  document.getElementById('c-perf').innerHTML=`<div class="profile-wrap"><div class="profile-avatar">${ini(CA.nome)}</div><div><div class="profile-name">${esc(CA.nome)}</div><div class="profile-meta">${CA.cpf?`<span><i class="fa-regular fa-id-card"></i>${esc(CA.cpf)}</span>`:''} ${CA.rg?`<span>RG: ${esc(CA.rg)}</span>`:''} ${CA.tel?`<span><i class="fa-solid fa-phone"></i>${esc(CA.tel)}</span>`:''} ${CA.email?`<span><i class="fa-regular fa-envelope"></i>${esc(CA.email)}</span>`:''}</div></div></div>`;
+function cPerfilRender(){
+  const rx=grx(CA.id);
+  document.getElementById('c-perfil').innerHTML=`<div class="profile-wrap"><div class="profile-avatar">${ini(CA.nome)}</div><div><div class="profile-name">${esc(CA.nome)}</div><div class="profile-meta">${CA.cpf?`<span><i class="fa-regular fa-id-card"></i>${esc(CA.cpf)}</span>`:''} ${CA.rg?`<span>RG: ${esc(CA.rg)}</span>`:''} ${CA.tel?`<span><i class="fa-solid fa-phone"></i>${esc(CA.tel)}</span>`:''} ${CA.email?`<span><i class="fa-regular fa-envelope"></i>${esc(CA.email)}</span>`:''}</div></div></div>`;
   document.getElementById('c-stats').innerHTML=`<div class="stat-card"><div class="stat-label">Total de Receitas</div><div class="stat-value green">${rx.length}</div></div><div class="stat-card"><div class="stat-label">Última Receita</div><div class="stat-value" style="font-size:14px">${rx.length?fd(rx[0].dt):'—'}</div></div><div class="stat-card"><div class="stat-label">Cliente desde</div><div class="stat-value" style="font-size:14px">${fd(CA.cdt||'')}</div></div>`;
 }
 
-async function tcAt(){
-  if(!CA)return;
-  const [rx,cb,ft]=await Promise.all([sbG('receitas',`cid=eq.${CA.id}&select=id`),sbG('cobr',`cid=eq.${CA.id}&select=id`),sbG('fotos',`cid=eq.${CA.id}&select=id`)]);
-  document.getElementById('tc-rx').textContent=rx.length;
-  document.getElementById('tc-cobr').textContent=cb.length;
-  document.getElementById('tc-fotos').textContent=ft.length;
+function tcAtualizar(){
+  if(!CA) return;
+  document.getElementById('tc-rx').textContent=grx(CA.id).length;
+  document.getElementById('tc-cobr').textContent=gcob(CA.id).length;
+  document.getElementById('tc-fotos').textContent=gf(CA.id).length;
 }
 
-/* ══════════════════════════════════════
-   ABAS
-══════════════════════════════════════ */
-function abaI(a){
-  abaAt=a;
-  ['rx','cobr','fotos'].forEach(x=>{cls('tb-'+x,'on',x===a);cls('tp-'+x,'on',x===a);});
-  const bp=document.getElementById('btn-p'),bi=document.getElementById('btn-pi'),bt=document.getElementById('btn-pt');
-  if(a==='rx'){bp.style.display='';bi.className='fa-solid fa-plus';bt.textContent='Nova Receita';}
-  else if(a==='cobr'){bp.style.display='';bi.className='fa-solid fa-plus';bt.textContent='Nova Cobrança';}
-  else{bp.style.display='none';}
-}
-function btnP(){
-  if(abaAt==='rx'){mrxP(null);mA('m-rx');}
-  else if(abaAt==='cobr'){mcobP(null);mA('m-cobr');}
+/* ── ABAS ── */
+function abaIr(aba){
+  abaAt=aba;
+  ['rx','cobr','fotos'].forEach(a=>{ cls('tb-'+a,'on',a===aba); cls('tp-'+a,'on',a===aba); });
+  const bp=document.getElementById('btn-p'), bi=document.getElementById('btn-p-i'), bt=document.getElementById('btn-p-t');
+  if(aba==='rx'){ bp.style.display=''; bi.className='fa-solid fa-plus'; bt.textContent='Nova Receita'; }
+  else if(aba==='cobr'){ bp.style.display=''; bi.className='fa-solid fa-plus'; bt.textContent='Nova Cobrança'; }
+  else{ bp.style.display='none'; }
 }
 
-/* ══════════════════════════════════════
-   RECEITAS
-══════════════════════════════════════ */
-async function rxR(){
-  const lista=await sbG('receitas',`cid=eq.${CA.id}&order=dt.desc`);
-  const el=document.getElementById('rx-l');
-  if(!lista.length){el.innerHTML=`<div class="empty"><i class="fa-regular fa-file-lines"></i><h3>Nenhuma receita cadastrada</h3><p>Clique em "Nova Receita" para adicionar.</p></div>`;return;}
+function btnPrincipalClick(){
+  if(abaAt==='rx'){ mrxPrep(null); modalAbrir('m-rx'); }
+  else if(abaAt==='cobr'){ mcobPrep(null); modalAbrir('m-cobr'); }
+}
+
+/* ── RECEITAS ── */
+function rxRender(){
+  const lista=grx(CA.id), el=document.getElementById('rx-lista');
+  if(!lista.length){ el.innerHTML=`<div class="empty"><i class="fa-regular fa-file-lines"></i><h3>Nenhuma receita cadastrada</h3><p>Clique em "Nova Receita" para adicionar.</p></div>`; return; }
   el.innerHTML=lista.map((r,i)=>`
     <div class="rx-card">
       <div class="rx-card-header">
@@ -641,8 +719,8 @@ async function rxR(){
           ${i===0?'<span class="badge badge-green"><i class="fa-solid fa-star" style="font-size:9px"></i> Mais recente</span>':''}
         </div>
         <div class="rx-card-actions">
-          <button class="btn btn-ghost btn-icon btn-sm" onclick="mrxE(${r.id})"><i class="fa-solid fa-pen" style="font-size:12px"></i></button>
-          <button class="btn btn-ghost btn-icon btn-sm" style="color:var(--danger)" onclick="rxDelP(${r.id})"><i class="fa-solid fa-trash" style="font-size:12px"></i></button>
+          <button class="btn btn-ghost btn-icon btn-sm" onclick="mrxEditar(${r.id})"><i class="fa-solid fa-pen" style="font-size:12px"></i></button>
+          <button class="btn btn-ghost btn-icon btn-sm" style="color:var(--danger)" onclick="rxExcluirPedir(${r.id})"><i class="fa-solid fa-trash" style="font-size:12px"></i></button>
         </div>
       </div>
       <table class="rx-table">
@@ -656,329 +734,382 @@ async function rxR(){
     </div>`).join('');
 }
 
-function mrxP(id){
+function mrxPrep(id){
   editR=id;
-  ['rx-dt','rx-ode','rx-odc','rx-odx','rx-oee','rx-oec','rx-oex','rx-adic','rx-obs'].forEach(i=>sv(i,''));
+  ['rx-dt','rx-od-e','rx-od-c','rx-od-x','rx-oe-e','rx-oe-c','rx-oe-x','rx-adic','rx-obs'].forEach(i=>sv(i,''));
   document.getElementById('erx-dt').textContent='';
-  document.getElementById('mrx-tit').textContent=id?'Editar Receita':'Nova Receita';
-  sv('rx-dt',hj());
+  document.getElementById('mrx-titulo').textContent=id?'Editar Receita':'Nova Receita';
+  sv('rx-dt', hj());
+  if(id){ const r=D.receitas.find(x=>x.id===id); if(r){ sv('rx-dt',r.dt);sv('rx-od-e',r.ode);sv('rx-od-c',r.odc);sv('rx-od-x',r.odx);sv('rx-oe-e',r.oee);sv('rx-oe-c',r.oec);sv('rx-oe-x',r.oex);sv('rx-adic',r.adic);sv('rx-obs',r.obs); } }
 }
 
-async function mrxE(id){
-  mrxP(id);
-  const rows=await sbG('receitas',`id=eq.${id}&limit=1`);
-  if(rows.length){const r=rows[0];sv('rx-dt',r.dt);sv('rx-ode',r.ode);sv('rx-odc',r.odc);sv('rx-odx',r.odx);sv('rx-oee',r.oee);sv('rx-oec',r.oec);sv('rx-oex',r.oex);sv('rx-adic',r.adic);sv('rx-obs',r.obs);}
-  mA('m-rx');
-}
+function mrxEditar(id){ mrxPrep(id); modalAbrir('m-rx'); }
 
-async function rxS(){
+function rxSalvar(){
   const dt=gv('rx-dt');
   document.getElementById('erx-dt').textContent='';
-  if(!dt){document.getElementById('erx-dt').textContent='A data é obrigatória.';return;}
-  const p={dt,ode:gv('rx-ode').replace(',','.'),odc:gv('rx-odc').replace(',','.'),odx:gv('rx-odx'),oee:gv('rx-oee').replace(',','.'),oec:gv('rx-oec').replace(',','.'),oex:gv('rx-oex'),adic:gv('rx-adic').replace(',','.'),obs:gv('rx-obs')||null,cid:CA.id};
-  ldOn('Salvando receita…');
-  try{
-    if(editR){await sbU('receitas',editR,p);toast('Receita atualizada!','success');}
-    else{await sbP('receitas',p);toast('Receita salva!','success');}
-    mF('m-rx'); await rxR(); await cPerfR(); await listaR(document.getElementById('sb-busca').value); tcAt();
-  }catch(e){toast('Erro ao salvar receita.','error');console.error(e);}
-  finally{ldOff();}
+  if(!dt){ document.getElementById('erx-dt').textContent='A data é obrigatória.'; return; }
+  const r={dt,ode:gv('rx-od-e').replace(',','.'),odc:gv('rx-od-c').replace(',','.'),odx:gv('rx-od-x'),oee:gv('rx-oe-e').replace(',','.'),oec:gv('rx-oe-c').replace(',','.'),oex:gv('rx-oe-x'),adic:gv('rx-adic').replace(',','.'),obs:gv('rx-obs'),cid:CA.id};
+  if(editR){ const i=D.receitas.findIndex(x=>x.id===editR); if(i>=0)D.receitas[i]={...D.receitas[i],...r}; toastShow('Receita atualizada!','success'); }
+  else{ D.receitas.push({id:nid('r'),...r}); toastShow('Receita salva!','success'); }
+  dbSave(); modalFechar('m-rx'); rxRender(); cPerfilRender(); listaRender(document.getElementById('sb-busca').value); tcAtualizar();
 }
 
-function rxDelP(id){
-  confP('Excluir receita?','Esta receita será removida permanentemente.','Excluir Receita',async()=>{
-    ldOn('Excluindo…');try{await sbD('receitas',id);toast('Receita excluída.','info');await rxR();await cPerfR();await listaR();tcAt();}catch(e){toast('Erro.','error');}finally{ldOff();}
-  });
+function rxExcluirPedir(id){
+  confPedir('Excluir receita?','Esta receita será removida permanentemente.','Excluir Receita',()=>{ D.receitas=D.receitas.filter(r=>r.id!==id); dbSave(); toastShow('Receita excluída.','info'); rxRender(); cPerfilRender(); listaRender(); tcAtualizar(); });
 }
 
-/* ══════════════════════════════════════
-   COBRANÇAS
-══════════════════════════════════════ */
-async function cobrR(){
-  const cl=await sbG('cobr',`cid=eq.${CA.id}&order=id.desc`);
-  const ps=cl.length?await sbG('parcelas',`cbid=in.(${cl.map(c=>c.id).join(',')})&order=num.asc`):[];
-  let tG=0,tP=0;
-  cl.forEach(c=>{const p2=ps.filter(p=>p.cbid===c.id),pg=p2.filter(p=>p.pg).length,vp=c.val/c.np;tG+=+c.val;tP+=pg*vp;});
-  document.getElementById('cobr-r').innerHTML=cl.length?`<div class="stat-card"><div class="stat-label">Total em compras</div><div class="stat-value" style="font-size:16px">${brl(tG)}</div></div><div class="stat-card"><div class="stat-label">Total pago</div><div class="stat-value green" style="font-size:16px">${brl(tP)}</div></div><div class="stat-card"><div class="stat-label">A receber</div><div class="stat-value" style="font-size:16px;color:var(--danger)">${brl(tG-tP)}</div></div>`:'';
-  const el=document.getElementById('cobr-l');
-  if(!cl.length){el.innerHTML=`<div class="empty"><i class="fa-solid fa-file-invoice-dollar"></i><h3>Nenhuma cobrança cadastrada</h3><p>Clique em "Nova Cobrança".</p></div>`;return;}
-  const H2=hj();
+/* ── COBRANÇAS ── */
+function cobrRender(){
+  const cl=gcob(CA.id); let tG=0,tP=0;
+  cl.forEach(c=>{ const ps=gpar(c.id),pg=ps.filter(p=>p.pg).length,vp=c.val/c.np; tG+=c.val; tP+=pg*vp; });
+  document.getElementById('cobr-res').innerHTML=cl.length?`<div class="stat-card"><div class="stat-label">Total em compras</div><div class="stat-value" style="font-size:16px">${brl(tG)}</div></div><div class="stat-card"><div class="stat-label">Total pago</div><div class="stat-value green" style="font-size:16px">${brl(tP)}</div></div><div class="stat-card"><div class="stat-label">A receber</div><div class="stat-value" style="font-size:16px;color:var(--danger)">${brl(tG-tP)}</div></div>`:'';
+  const el=document.getElementById('cobr-lista');
+  if(!cl.length){ el.innerHTML=`<div class="empty"><i class="fa-solid fa-file-invoice-dollar"></i><h3>Nenhuma cobrança cadastrada</h3><p>Clique em "Nova Cobrança" para registrar uma compra parcelada.</p></div>`; return; }
+  const H=hj();
   el.innerHTML=cl.map(c=>{
-    const p2=ps.filter(p=>p.cbid===c.id),pg=p2.filter(p=>p.pg).length,vp=c.val/c.np,pct=Math.round(pg/c.np*100);
-    const quit=pg===c.np,atr=p2.some(p=>!p.pg&&p.dv&&p.dv<H2);
-    const st=quit?'quit':atr?'atr':'pend',sl=quit?'Quitada':atr?'Em atraso':'Em aberto',bf=quit?'v':atr?'r':'a';
-    const pills=p2.map(p=>{const v2=!p.pg&&p.dv&&p.dv<H2;const pc=p.pg?'pg':v2?'at':'pe';return `<button class="pill ${pc}" title="Parcela ${p.num}${p.pg?' — Paga em '+fd(p.dp||''):p.dv?' — Vence '+fd(p.dv):''}" onclick="parcA(${c.id},${p.num})">${p.num}${p.pg?'<i class="fa-solid fa-check pill-ck"></i>':''}</button>`;}).join('');
-    return `<div class="cob-card ${st}"><div class="cob-header"><div><div class="cob-prod">${esc(c.prod)}</div><div class="cob-dt">${c.dtc?'Compra: '+fd(c.dtc):''}${c.dt1?' · 1ª parcela: '+fd(c.dt1):''}</div></div><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="cob-st ${st}">${sl}</span><button class="btn btn-ghost btn-icon btn-sm" onclick="mcobE(${c.id})"><i class="fa-solid fa-pen" style="font-size:12px"></i></button><button class="btn btn-ghost btn-icon btn-sm" style="color:var(--danger)" onclick="cbDelP(${c.id})"><i class="fa-solid fa-trash" style="font-size:12px"></i></button></div></div><div class="cob-vals"><div class="cob-val"><div class="cob-val-lbl">Valor total</div><div class="cob-val-num">${brl(c.val)}</div></div><div class="cob-val"><div class="cob-val-lbl">Parcelas pagas</div><div class="cob-val-num g">${pg}/${c.np}</div></div><div class="cob-val"><div class="cob-val-lbl">Por parcela</div><div class="cob-val-num">${brl(vp)}</div></div></div><div class="prog-wrap"><div class="prog-lbl"><span>${pct}% pago</span><span>${brl(pg*vp)} de ${brl(c.val)}</span></div><div class="prog-bar"><div class="prog-fill ${bf}" style="width:${pct}%"></div></div></div><div style="font-size:11px;color:var(--text3);font-weight:500;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Clique na parcela para registrar pagamento</div><div class="parc-grid">${pills}</div>${c.obs?`<div class="cob-obs"><i class="fa-solid fa-note-sticky" style="margin-right:5px"></i>${esc(c.obs)}</div>`:''}</div>`;
+    const ps=gpar(c.id),pg=ps.filter(p=>p.pg).length,vp=c.val/c.np,pct=Math.round(pg/c.np*100);
+    const quit=pg===c.np,atr=ps.some(p=>!p.pg&&p.dv&&p.dv<H);
+    const st=quit?'quit':atr?'atr':'pend', sl=quit?'Quitada':atr?'Em atraso':'Em aberto', bf=quit?'v':atr?'r':'a';
+    const pills=ps.map(p=>{ const v2=!p.pg&&p.dv&&p.dv<H; const pc=p.pg?'pg':v2?'at':'pe'; return `<button class="pill ${pc}" title="Parcela ${p.num}${p.pg?' — Paga em '+fd(p.dp||''):p.dv?' — Vence '+fd(p.dv):''}" onclick="parcAbrir(${c.id},${p.num})">${p.num}${p.pg?'<i class="fa-solid fa-check pill-ck"></i>':''}</button>`; }).join('');
+    return `<div class="cob-card ${st}"><div class="cob-header"><div><div class="cob-prod">${esc(c.prod)}</div><div class="cob-dt">${c.dtc?'Compra: '+fd(c.dtc):''}${c.dt1?' · 1ª parcela: '+fd(c.dt1):''}</div></div><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span class="cob-st ${st}">${sl}</span><button class="btn btn-ghost btn-icon btn-sm" onclick="mcobEditar(${c.id})"><i class="fa-solid fa-pen" style="font-size:12px"></i></button><button class="btn btn-ghost btn-icon btn-sm" style="color:var(--danger)" onclick="cbExcluirPedir(${c.id})"><i class="fa-solid fa-trash" style="font-size:12px"></i></button></div></div><div class="cob-vals"><div class="cob-val"><div class="cob-val-lbl">Valor total</div><div class="cob-val-num">${brl(c.val)}</div></div><div class="cob-val"><div class="cob-val-lbl">Parcelas pagas</div><div class="cob-val-num g">${pg}/${c.np}</div></div><div class="cob-val"><div class="cob-val-lbl">Por parcela</div><div class="cob-val-num">${brl(vp)}</div></div></div><div class="prog-wrap"><div class="prog-lbl"><span>${pct}% pago</span><span>${brl(pg*vp)} de ${brl(c.val)}</span></div><div class="prog-bar"><div class="prog-fill ${bf}" style="width:${pct}%"></div></div></div><div style="font-size:11px;color:var(--text3);font-weight:500;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px">Clique na parcela para registrar pagamento</div><div class="parc-grid">${pills}</div>${c.obs?`<div class="cob-obs"><i class="fa-solid fa-note-sticky" style="margin-right:5px"></i>${esc(c.obs)}</div>`:''}</div>`;
   }).join('');
 }
 
-function mcobP(id){
+function mcobPrep(id){
   editCob=id;
   ['cb-prod','cb-val','cb-np','cb-dt1','cb-dtc','cb-obs'].forEach(i=>sv(i,''));
   ['ecb-prod','ecb-val','ecb-np'].forEach(i=>document.getElementById(i).textContent='');
   document.getElementById('cb-prev').style.display='none';
-  document.getElementById('mcob-tit').textContent=id?'Editar Cobrança':'Nova Cobrança';
+  document.getElementById('mcob-titulo').textContent=id?'Editar Cobrança':'Nova Cobrança';
   sv('cb-dtc',hj());
+  if(id){ const c=D.cobr.find(x=>x.id===id); if(c){ sv('cb-prod',c.prod);sv('cb-val',c.val.toFixed(2).replace('.',','));sv('cb-np',c.np);sv('cb-dt1',c.dt1);sv('cb-dtc',c.dtc||hj());sv('cb-obs',c.obs); cbPreview(); } }
 }
+function mcobEditar(id){ mcobPrep(id); modalAbrir('m-cobr'); }
 
-async function mcobE(id){
-  mcobP(id);
-  const rows=await sbG('cobr',`id=eq.${id}&limit=1`);
-  if(rows.length){const c=rows[0];sv('cb-prod',c.prod);sv('cb-val',parseFloat(c.val).toFixed(2).replace('.',','));sv('cb-np',c.np);sv('cb-dt1',c.dt1);sv('cb-dtc',c.dtc||hj());sv('cb-obs',c.obs);cbPrev();}
-  mA('m-cobr');
-}
+function cbPreview(){ const vs=document.getElementById('cb-val').value.replace(/\./g,'').replace(',','.'),np=parseInt(gv('cb-np'))||0,pv=document.getElementById('cb-prev'); if(vs&&np>0&&!isNaN(+vs)){ document.getElementById('cb-prev-t').textContent=`${np}x de ${brl(+vs/np)} = ${brl(+vs)}`; pv.style.display='block'; }else pv.style.display='none'; }
 
-function cbPrev(){const vs=document.getElementById('cb-val').value.replace(/\./g,'').replace(',','.'),np=parseInt(gv('cb-np'))||0,pv=document.getElementById('cb-prev');if(vs&&np>0&&!isNaN(+vs)){document.getElementById('cb-prev-t').textContent=`${np}x de ${brl(+vs/np)} = ${brl(+vs)}`;pv.style.display='block';}else pv.style.display='none';}
-function calcV(dt,m){const d=new Date(dt+'T12:00:00');d.setMonth(d.getMonth()+m);return d.toISOString().split('T')[0];}
+function calcV(dt,m){ const d=new Date(dt+'T12:00:00'); d.setMonth(d.getMonth()+m); return d.toISOString().split('T')[0]; }
 
-async function cbS(){
+function cbSalvar(){
   const prod=gv('cb-prod'),vs=gv('cb-val').replace(/\./g,'').replace(',','.'),np=parseInt(gv('cb-np'))||0,dt1=gv('cb-dt1'),dtc=gv('cb-dtc'),obs=gv('cb-obs');
   ['ecb-prod','ecb-val','ecb-np'].forEach(i=>document.getElementById(i).textContent='');
   let ok=true;
-  if(!prod){document.getElementById('ecb-prod').textContent='Informe o produto.';ok=false;}
-  if(!vs||isNaN(+vs)||+vs<=0){document.getElementById('ecb-val').textContent='Valor inválido.';ok=false;}
-  if(np<1){document.getElementById('ecb-np').textContent='Informe as parcelas.';ok=false;}
-  if(!ok)return;
-  ldOn('Salvando cobrança…');
-  try{
-    const payload={prod,val:+vs,np,dt1:dt1||null,dtc:dtc||null,obs:obs||null,cid:CA.id};
-    if(editCob){
-      await sbU('cobr',editCob,payload);
-      if(dt1){const parcs=await sbG('parcelas',`cbid=eq.${editCob}&pg=eq.false`);for(const p of parcs)await sbU('parcelas',p.id,{dv:calcV(dt1,p.num-1)});}
-      toast('Cobrança atualizada!','success');
-    }else{
-      const rows=await sbP('cobr',payload);
-      const cid=rows[0].id;
-      for(let i=1;i<=np;i++)await sbP('parcelas',{cbid:cid,num:i,pg:false,dv:dt1?calcV(dt1,i-1):null,dp:null,obs:null});
-      toast('Cobrança criada!','success');
-    }
-    mF('m-cobr'); await cobrR(); tcAt();
-  }catch(e){toast('Erro ao salvar cobrança.','error');console.error(e);}
-  finally{ldOff();}
+  if(!prod){ document.getElementById('ecb-prod').textContent='Informe o produto.'; ok=false; }
+  if(!vs||isNaN(+vs)||+vs<=0){ document.getElementById('ecb-val').textContent='Valor inválido.'; ok=false; }
+  if(np<1){ document.getElementById('ecb-np').textContent='Informe as parcelas.'; ok=false; }
+  if(!ok) return;
+  const val=+vs;
+  if(editCob){ const i=D.cobr.findIndex(x=>x.id===editCob); if(i>=0){ D.cobr[i]={...D.cobr[i],prod,val,np,dt1:dt1||null,dtc:dtc||null,obs:obs||null}; if(dt1) D.parcelas.filter(p=>p.cbid===editCob&&!p.pg).forEach(p=>{p.dv=calcV(dt1,p.num-1);}); } toastShow('Cobrança atualizada!','success'); }
+  else{ const id=nid('cb'); D.cobr.push({id,cid:CA.id,prod,val,np,dt1:dt1||null,dtc:dtc||null,obs:obs||null}); for(let i=1;i<=np;i++) D.parcelas.push({id:nid('p'),cbid:id,num:i,pg:false,dv:dt1?calcV(dt1,i-1):null,dp:null,obs:null}); toastShow('Cobrança criada!','success'); }
+  dbSave(); modalFechar('m-cobr'); cobrRender(); tcAtualizar();
 }
 
-async function parcA(cbid,num){
-  const rows=await sbG('parcelas',`cbid=eq.${cbid}&num=eq.${num}&limit=1`);
-  if(!rows.length)return;
-  parcAt=rows[0];
-  document.getElementById('mp-tit').textContent=`Parcela ${num}`;
-  sv('mp-dt',parcAt.dp||hj()); sv('mp-obs',parcAt.obs||'');
+function parcAbrir(cbid,num){
+  const p=D.parcelas.find(x=>x.cbid===cbid&&x.num===num); if(!p) return;
+  parcAtual=p;
+  document.getElementById('mp-titulo').textContent=`Parcela ${num}`;
+  sv('mp-dt',p.dp||hj()); sv('mp-obs',p.obs||'');
   const info=document.getElementById('mp-info');
-  if(parcAt.pg){info.innerHTML=`<span style="color:var(--accent)"><i class="fa-solid fa-check-circle" style="margin-right:6px"></i><strong>Parcela já paga</strong></span>${parcAt.dp?`<br>Paga em: <strong>${fd(parcAt.dp)}</strong>`:''}`; document.getElementById('btn-desm').style.display='';document.getElementById('btn-pgto').style.display='none';}
-  else{info.innerHTML=`<span style="color:var(--text2)">Parcela <strong>${num}</strong> ainda não paga.</span>${parcAt.dv?`<br>Vencimento: <strong>${fd(parcAt.dv)}</strong>`:''}`; document.getElementById('btn-desm').style.display='none';document.getElementById('btn-pgto').style.display='';}
-  mA('m-parc');
+  if(p.pg){ info.innerHTML=`<span style="color:var(--accent)"><i class="fa-solid fa-check-circle" style="margin-right:6px"></i><strong>Parcela já paga</strong></span>${p.dp?`<br>Paga em: <strong>${fd(p.dp)}</strong>`:''}`;cls('btn-desm','',false);document.getElementById('btn-desm').style.display='';document.getElementById('btn-pgto').style.display='none'; }
+  else{ info.innerHTML=`<span style="color:var(--text2)">Parcela <strong>${num}</strong> ainda não paga.</span>${p.dv?`<br>Vencimento: <strong>${fd(p.dv)}</strong>`:''}`;document.getElementById('btn-desm').style.display='none';document.getElementById('btn-pgto').style.display=''; }
+  modalAbrir('m-parc');
 }
 
-async function parcC(){
-  if(!parcAt)return;
-  ldOn('Registrando…');
-  try{await sbU('parcelas',parcAt.id,{pg:true,dp:gv('mp-dt')||null,obs:gv('mp-obs')||null});mF('m-parc');toast(`Parcela ${parcAt.num} paga!`,'success');parcAt=null;await cobrR();}
-  catch(e){toast('Erro.','error');}finally{ldOff();}
-}
+function parcConfirmar(){ if(!parcAtual)return; parcAtual.pg=true; parcAtual.dp=gv('mp-dt')||null; parcAtual.obs=gv('mp-obs')||null; dbSave(); modalFechar('m-parc'); toastShow(`Parcela ${parcAtual.num} paga!`,'success'); parcAtual=null; cobrRender(); }
+function parcDesmarcar(){ if(!parcAtual)return; parcAtual.pg=false; parcAtual.dp=null; parcAtual.obs=null; dbSave(); modalFechar('m-parc'); toastShow('Parcela desmarcada.','info'); parcAtual=null; cobrRender(); }
 
-async function parcD(){
-  if(!parcAt)return;
-  ldOn('Desmarcando…');
-  try{await sbU('parcelas',parcAt.id,{pg:false,dp:null,obs:null});mF('m-parc');toast('Parcela desmarcada.','info');parcAt=null;await cobrR();}
-  catch(e){toast('Erro.','error');}finally{ldOff();}
-}
+function cbExcluirPedir(id){ confPedir('Excluir cobrança?','A cobrança e todas as parcelas serão removidas.','Excluir Cobrança',()=>{ D.cobr=D.cobr.filter(c=>c.id!==id); D.parcelas=D.parcelas.filter(p=>p.cbid!==id); dbSave(); toastShow('Cobrança excluída.','info'); cobrRender(); tcAtualizar(); }); }
 
-function cbDelP(id){
-  confP('Excluir cobrança?','A cobrança e todas as parcelas serão removidas.','Excluir Cobrança',async()=>{
-    ldOn('Excluindo…');try{await sbDW('parcelas','cbid',id);await sbD('cobr',id);toast('Cobrança excluída.','info');await cobrR();tcAt();}catch(e){toast('Erro.','error');}finally{ldOff();}
-  });
-}
-
-/* ══════════════════════════════════════
-   FOTOS
-══════════════════════════════════════ */
-async function fotosR(){
-  const fs=await sbG('fotos',`cid=eq.${CA.id}&order=id.asc`);
-  const g=document.getElementById('fotos-g');
-  const th=fs.map(f=>`<div class="foto-thumb" onclick="fvA('${f.d}')"><img src="${f.d}" alt="" loading="lazy"><button class="foto-del" onclick="event.stopPropagation();fotoDel(${f.id})"><i class="fa-solid fa-xmark"></i></button></div>`).join('');
-  const add=`<label class="foto-add"><i class="fa-solid fa-camera"></i><span>Adicionar</span><input type="file" accept="image/*" capture="environment" style="display:none" onchange="fotoAdd(this)"></label>`;
+/* ── FOTOS ── */
+function fotosRender(){
+  const fs=gf(CA.id), g=document.getElementById('fotos-g');
+  const th=fs.map(f=>`<div class="foto-thumb" onclick="fvAbrir('${f.d}')"><img src="${f.d}" alt="" loading="lazy"><button class="foto-del" onclick="event.stopPropagation();fotoExcluir(${f.id})"><i class="fa-solid fa-xmark"></i></button></div>`).join('');
+  const add=`<label class="foto-add"><i class="fa-solid fa-camera"></i><span>Adicionar</span><input type="file" accept="image/*" capture="environment" style="display:none" onchange="fotoAdicionar(this)"></label>`;
   g.innerHTML=th+add;
 }
 
-function fotoAdd(input){
-  const file=input.files[0];if(!file)return;
-  if(file.size>8*1024*1024){toast('Foto muito grande. Máx 8MB.','error');return;}
-  ldOn('Enviando foto…');
+function fotoAdicionar(input){
+  const file=input.files[0]; if(!file)return;
+  if(file.size>8*1024*1024){ toastShow('Foto muito grande. Máx 8MB.','error'); return; }
   const rd=new FileReader();
-  rd.onload=e=>{const img=new Image();img.onload=async()=>{const M=1200,r2=Math.min(M/img.width,M/img.height,1),c=document.createElement('canvas');c.width=Math.round(img.width*r2);c.height=Math.round(img.height*r2);c.getContext('2d').drawImage(img,0,0,c.width,c.height);const d=c.toDataURL('image/jpeg',.82);try{await sbP('fotos',{cid:CA.id,d,n:file.name});await fotosR();tcAt();toast('Foto adicionada!','success');}catch(e){toast('Erro ao salvar foto.','error');}finally{ldOff();};};img.src=e.target.result;};
-  rd.readAsDataURL(file);input.value='';
+  rd.onload=e=>{ const img=new Image(); img.onload=()=>{ const M=1200,r=Math.min(M/img.width,M/img.height,1),c=document.createElement('canvas'); c.width=Math.round(img.width*r); c.height=Math.round(img.height*r); c.getContext('2d').drawImage(img,0,0,c.width,c.height); D.fotos.push({id:nid('f'),cid:CA.id,d:c.toDataURL('image/jpeg',.82),n:file.name}); dbSave(); fotosRender(); tcAtualizar(); toastShow('Foto adicionada!','success'); }; img.src=e.target.result; };
+  rd.readAsDataURL(file); input.value='';
 }
 
-async function fotoDel(id){
-  ldOn('Removendo…');
-  try{await sbD('fotos',id);await fotosR();tcAt();toast('Foto removida.','info');}
-  catch(e){toast('Erro.','error');}finally{ldOff();}
-}
+function fotoExcluir(id){ D.fotos=D.fotos.filter(f=>f.id!==id); dbSave(); fotosRender(); tcAtualizar(); toastShow('Foto removida.','info'); }
 
-/* ══════════════════════════════════════
-   MODAL CLIENTE
-══════════════════════════════════════ */
-function mcP(id){
+/* ── MODAL CLIENTE ── */
+function mcPrep(id){
   editC=id;
   ['mc-nome','mc-cpf','mc-rg','mc-tel','mc-email'].forEach(i=>sv(i,''));
   ['ec-nome','ec-cpf','ec-email'].forEach(i=>document.getElementById(i).textContent='');
-  document.getElementById('mc-tit').textContent=id?'Editar Cliente':'Novo Cliente';
-  if(id&&CA&&CA.id===id){sv('mc-nome',CA.nome);sv('mc-cpf',CA.cpf);sv('mc-rg',CA.rg);sv('mc-tel',CA.tel);sv('mc-email',CA.email);}
+  document.getElementById('mc-titulo').textContent=id?'Editar Cliente':'Novo Cliente';
+  if(id){ const c=gc(id); if(c){sv('mc-nome',c.nome);sv('mc-cpf',c.cpf);sv('mc-rg',c.rg);sv('mc-tel',c.tel);sv('mc-email',c.email);} }
 }
-function mcE(){if(!CA)return;mcP(CA.id);mA('m-cli');}
+function mcEditar(){ if(!CA)return; mcPrep(CA.id); modalAbrir('m-cliente'); }
 
-async function mcS(){
+function mcSalvar(){
   const nome=gv('mc-nome'),cpf=gv('mc-cpf'),rg=gv('mc-rg'),tel=gv('mc-tel'),email=gv('mc-email');
   ['ec-nome','ec-cpf','ec-email'].forEach(i=>document.getElementById(i).textContent='');
   let ok=true;
-  if(!nome){document.getElementById('ec-nome').textContent='O nome é obrigatório.';ok=false;}
-  if(cpf&&!cpfOk(cpf)){document.getElementById('ec-cpf').textContent='CPF inválido.';ok=false;}
-  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('ec-email').textContent='E-mail inválido.';ok=false;}
+  if(!nome){ document.getElementById('ec-nome').textContent='O nome é obrigatório.'; ok=false; }
+  if(cpf&&!cpfOk(cpf)){ document.getElementById('ec-cpf').textContent='CPF inválido.'; ok=false; }
+  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ document.getElementById('ec-email').textContent='E-mail inválido.'; ok=false; }
   if(!ok)return;
-  ldOn(editC?'Atualizando…':'Cadastrando…');
-  try{
-    const p={nome,cpf:cpf||null,rg:rg||null,tel:tel||null,email:email||null};
-    if(editC){const rows=await sbU('clientes',editC,p);CA=rows[0];document.getElementById('c-tit').textContent=nome;await cPerfR();toast('Cliente atualizado!','success');mF('m-cli');await listaR(document.getElementById('sb-busca').value);}
-    else{const rows=await sbP('clientes',{...p,cdt:hj()});mF('m-cli');await listaR();await irCli(rows[0].id);toast('Cliente cadastrado!','success');return;}
-  }catch(e){toast('Erro ao salvar cliente.','error');console.error(e);}
-  finally{ldOff();}
+  if(editC){ const i=D.clientes.findIndex(c=>c.id===editC); if(i>=0)D.clientes[i]={...D.clientes[i],nome,cpf:cpf||null,rg:rg||null,tel:tel||null,email:email||null}; if(CA&&CA.id===editC){CA=D.clientes[i];document.getElementById('c-titulo').textContent=nome;cPerfilRender();} toastShow('Cliente atualizado!','success'); modalFechar('m-cliente'); listaRender(document.getElementById('sb-busca').value); }
+  else{ const id=nid('c'); D.clientes.push({id,nome,cpf:cpf||null,rg:rg||null,tel:tel||null,email:email||null,cdt:hj()}); dbSave(); modalFechar('m-cliente'); listaRender(); irCliente(id); toastShow('Cliente cadastrado!','success'); return; }
+  dbSave();
 }
 
-async function cDelP(){
+function cExcluirPedir(){
   if(!CA)return;
-  confP('Excluir cliente?',`"${CA.nome}" e todos os dados serão removidos.`,'Excluir Cliente',async()=>{
-    ldOn('Excluindo…');
-    try{
-      const cb=await sbG('cobr',`cid=eq.${CA.id}&select=id`);
-      for(const c of cb)await sbDW('parcelas','cbid',c.id).catch(()=>{});
-      await sbDW('cobr','cid',CA.id).catch(()=>{});
-      await sbDW('receitas','cid',CA.id).catch(()=>{});
-      await sbDW('fotos','cid',CA.id).catch(()=>{});
-      await sbD('clientes',CA.id);
-      CA=null;toast('Cliente excluído.','info');await listaR();await irDash();
-    }catch(e){toast('Erro ao excluir.','error');console.error(e);}
-    finally{ldOff();}
+  confPedir('Excluir cliente?',`"${CA.nome}" e todos os dados serão removidos.`,'Excluir Cliente',()=>{
+    const id=CA.id,cbIds=D.cobr.filter(c=>c.cid===id).map(c=>c.id);
+    D.clientes=D.clientes.filter(c=>c.id!==id); D.receitas=D.receitas.filter(r=>r.cid!==id);
+    D.cobr=D.cobr.filter(c=>c.cid!==id); D.parcelas=D.parcelas.filter(p=>!cbIds.includes(p.cbid));
+    D.fotos=D.fotos.filter(f=>f.cid!==id); dbSave(); CA=null; toastShow('Cliente excluído.','info'); listaRender(); irDash();
   });
 }
 
-/* ══════════════════════════════════════
-   EXPORT / IMPORT
-══════════════════════════════════════ */
-async function exportar(){
-  ldOn('Exportando…');
-  try{
-    const [cl,rx,cb,ps,ft]=await Promise.all([sbG('clientes','order=id.asc'),sbG('receitas','order=id.asc'),sbG('cobr','order=id.asc'),sbG('parcelas','order=id.asc'),sbG('fotos','order=id.asc')]);
-    const bk={versao:6,app:'Pochmann',dt:new Date().toISOString(),clientes:cl,receitas:rx,cobr:cb,parcelas:ps,fotos:ft};
-    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(bk,null,2)],{type:'application/json'}));a.download=`pochmann_backup_${hj().replace(/-/g,'')}.json`;a.click();URL.revokeObjectURL(a.href);
-    toast(`Backup exportado: ${cl.length} clientes.`,'success');
-  }catch(e){toast('Erro ao exportar.','error');}finally{ldOff();}
+/* ── EXPORTAR / IMPORTAR ── */
+function exportar(){
+  const bk={versao:6,app:'Pochmann',dt:new Date().toISOString(),...D};
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([JSON.stringify(bk,null,2)],{type:'application/json'}));
+  a.download=`pochmann_backup_${hj().replace(/-/g,'')}.json`; a.click(); URL.revokeObjectURL(a.href);
+  toastShow(`Backup exportado: ${D.clientes.length} clientes.`,'success');
 }
 
-function impArq(input){
-  const file=input.files[0];if(!file)return;input.value='';
+function importarArq(input){
+  const file=input.files[0]; if(!file)return; input.value='';
   const rd=new FileReader();
-  rd.onload=e=>{try{
+  rd.onload=e=>{ try{
     const d=JSON.parse(e.target.result);
-    if(!Array.isArray(d.clientes)||!Array.isArray(d.receitas))throw new Error('Formato inválido');
-    impP=d;
-    document.getElementById('imp-fn').textContent=file.name;
+    if(!Array.isArray(d.clientes)||!Array.isArray(d.receitas)) throw new Error('Formato inválido');
+    impPend=d; sv('imp-fn',file.name);
     document.getElementById('imp-sum').innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px"><div><span style="color:var(--text3);font-size:11px">Clientes</span><br><strong style="font-size:16px;color:var(--accent)">${d.clientes.length}</strong></div><div><span style="color:var(--text3);font-size:11px">Receitas</span><br><strong style="font-size:16px">${d.receitas.length}</strong></div>${(d.cobr||[]).length?`<div><span style="color:var(--text3);font-size:11px">Cobranças</span><br><strong style="font-size:16px">${d.cobr.length}</strong></div>`:''}${d.dt?`<div style="grid-column:1/-1"><span style="color:var(--text3);font-size:11px">Data</span><br><span style="font-size:12px;font-family:var(--mono)">${new Date(d.dt).toLocaleString('pt-BR')}</span></div>`:''}</div>`;
-    document.querySelector('input[name="imp-modo"][value="merge"]').checked=true;impM('merge');mA('m-imp');
-  }catch(e){toast('Arquivo inválido.','error');}};
+    document.querySelector('input[name="imp-modo"][value="merge"]').checked=true; impModo('merge'); modalAbrir('m-imp');
+  }catch(e){ toastShow('Arquivo inválido.','error'); } };
   rd.readAsText(file);
 }
 
-function impM(m){document.getElementById('imp-lm').style.borderColor=m==='merge'?'var(--accent)':'var(--border)';document.getElementById('imp-lr').style.borderColor=m==='replace'?'var(--danger)':'var(--border)';document.getElementById('imp-lm').style.background=m==='merge'?'var(--accent-light)':'';document.getElementById('imp-lr').style.background=m==='replace'?'var(--danger-light)':'';}
+function impModo(m){ cls('imp-lm','',false); cls('imp-lr','',false); document.getElementById('imp-lm').style.borderColor=m==='merge'?'var(--accent)':'var(--border)'; document.getElementById('imp-lr').style.borderColor=m==='replace'?'var(--danger)':'var(--border)'; document.getElementById('imp-lm').style.background=m==='merge'?'var(--accent-light)':''; document.getElementById('imp-lr').style.background=m==='replace'?'var(--danger-light)':''; }
 
-async function impEx(){
-  if(!impP)return;
-  const modo=document.querySelector('input[name="imp-modo"]:checked').value,d=impP;
-  mF('m-imp');ldOn('Importando dados…');
-  try{
-    if(modo==='replace'){
-      const [cl,cb]=await Promise.all([sbG('clientes','select=id'),sbG('cobr','select=id')]);
-      for(const c of cb)await sbDW('parcelas','cbid',c.id).catch(()=>{});
-      for(const c of cl){await sbDW('cobr','cid',c.id).catch(()=>{});await sbDW('receitas','cid',c.id).catch(()=>{});await sbDW('fotos','cid',c.id).catch(()=>{});await sbD('clientes',c.id).catch(()=>{});}
-    }
-    const mc={},mcb={};
-    for(const c of d.clientes){const r=await sbP('clientes',{nome:c.nome,cpf:c.cpf||null,rg:c.rg||null,tel:c.tel||null,email:c.email||null,cdt:c.cdt||null});mc[c.id]=r[0].id;}
-    for(const r of d.receitas){const nc=mc[r.cid||r.cliente_id]||(r.cid||r.cliente_id);await sbP('receitas',{cid:nc,dt:r.dt,ode:r.ode||null,odc:r.odc||null,odx:r.odx||null,oee:r.oee||null,oec:r.oec||null,oex:r.oex||null,adic:r.adic||null,obs:r.obs||null});}
-    for(const c of (d.cobr||[])){const nc=mc[c.cid||c.cliente_id]||(c.cid||c.cliente_id);const rr=await sbP('cobr',{cid:nc,prod:c.prod,val:c.val,np:c.np,dt1:c.dt1||null,dtc:c.dtc||null,obs:c.obs||null});mcb[c.id]=rr[0].id;}
-    for(const p of (d.parcelas||[])){const nc=mcb[p.cbid||p.cobranca_id]||(p.cbid||p.cobranca_id);await sbP('parcelas',{cbid:nc,num:p.num,pg:p.pg||false,dv:p.dv||null,dp:p.dp||null,obs:p.obs||null});}
-    for(const f of (d.fotos||[])){if(!f.d&&!f.dados&&!f.dados_base64)continue;const nc=mc[f.cid||f.cliente_id]||(f.cid||f.cliente_id);await sbP('fotos',{cid:nc,d:f.d||f.dados||f.dados_base64,n:f.n||f.nome||null});}
-    impP=null;CA=null;await listaR();await irDash();toast(`Importação concluída: ${d.clientes.length} clientes.`,'success');
-  }catch(e){toast('Erro na importação.','error');console.error(e);}finally{ldOff();}
+function impExecutar(){
+  if(!impPend)return;
+  const modo=document.querySelector('input[name="imp-modo"]:checked').value, d=impPend;
+  modalFechar('m-imp');
+  if(modo==='replace'){ D.clientes=[];D.receitas=[];D.cobr=[];D.parcelas=[];D.fotos=[];D.seq={c:1,r:1,cb:1,p:1,f:1}; }
+  const mc={},mcb={};
+  (d.clientes||[]).forEach(c=>{ const ni=nid('c'); mc[c.id]=ni; D.clientes.push({...c,id:ni}); });
+  (d.receitas||[]).forEach(r=>{ D.receitas.push({...r,id:nid('r'),cid:mc[r.cid||r.cliente_id]||(r.cid||r.cliente_id)}); });
+  (d.cobr||[]).forEach(c=>{ const ni=nid('cb'); mcb[c.id]=ni; D.cobr.push({...c,id:ni,cid:mc[c.cid||c.cliente_id]||(c.cid||c.cliente_id)}); });
+  (d.parcelas||[]).forEach(p=>{ D.parcelas.push({...p,id:nid('p'),cbid:mcb[p.cbid||p.cobranca_id]||(p.cbid||p.cobranca_id)}); });
+  (d.fotos||[]).forEach(f=>{ if(f.d||f.dados||f.dados_base64) D.fotos.push({...f,id:nid('f'),d:f.d||f.dados||f.dados_base64,cid:mc[f.cid||f.cliente_id]||(f.cid||f.cliente_id)}); });
+  dbSave(); impPend=null; CA=null; listaRender(); irDash(); toastShow(`Importação concluída: ${d.clientes.length} clientes.`,'success');
 }
 
-/* ══════════════════════════════════════
-   CONFIRMAR GENÉRICO
-══════════════════════════════════════ */
-function confP(t,m,b,fn){document.getElementById('mct').textContent=t;document.getElementById('mcm').textContent=m;document.getElementById('mcb').textContent=b;document.getElementById('mcb').onclick=()=>{mF('m-conf');fn();};mA('m-conf');}
+/* ── CONFIRMAR GENÉRICO ── */
+function confPedir(t,m,b,fn){ document.getElementById('mconf-t').textContent=t; document.getElementById('mconf-m').textContent=m; document.getElementById('mconf-btn').textContent=b; document.getElementById('mconf-btn').onclick=()=>{ modalFechar('m-conf'); fn(); }; modalAbrir('m-conf'); }
+
+/* ── MÁSCARAS ── */
+function mCPF(el){ let d=el.value.replace(/\D/g,'').slice(0,11); if(d.length>9)d=d.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/,'$1.$2.$3-$4'); else if(d.length>6)d=d.replace(/(\d{3})(\d{3})(\d{1,3})/,'$1.$2.$3'); else if(d.length>3)d=d.replace(/(\d{3})(\d{1,3})/,'$1.$2'); el.value=d; }
+function mTel(el){ let d=el.value.replace(/\D/g,'').slice(0,11); if(d.length>10)d=d.replace(/(\d{2})(\d{5})(\d{4})/,'($1) $2-$3'); else if(d.length>6)d=d.replace(/(\d{2})(\d{4,5})(\d{0,4})/,'($1) $2-$3'); else if(d.length>2)d=d.replace(/(\d{2})(\d{0,5})/,'($1) $2'); el.value=d; }
+function mMoeda(el){ let v=el.value.replace(/\D/g,''); v=(parseInt(v||'0')/100).toFixed(2); v=v.replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.'); el.value=v; if(typeof cbPreview==='function' && document.getElementById('m-cobr').classList.contains('on')) cbPreview(); }
+function cpfOk(c){ c=c.replace(/[.\-]/g,''); if(c.length!==11||/^(\d)\1+$/.test(c))return false; let s=0; for(let i=0;i<9;i++)s+=+c[i]*(10-i); let r=s%11<2?0:11-(s%11); if(r!==+c[9])return false; s=0; for(let i=0;i<10;i++)s+=+c[i]*(11-i); r=s%11<2?0:11-(s%11); return r===+c[10]; }
 
 /* ══════════════════════════════════════
-   MÁSCARAS
+   ESTOQUE
 ══════════════════════════════════════ */
-function mCPF(el){let d=el.value.replace(/\D/g,'').slice(0,11);if(d.length>9)d=d.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/,'$1.$2.$3-$4');else if(d.length>6)d=d.replace(/(\d{3})(\d{3})(\d{1,3})/,'$1.$2.$3');else if(d.length>3)d=d.replace(/(\d{3})(\d{1,3})/,'$1.$2');el.value=d;}
-function mTel(el){let d=el.value.replace(/\D/g,'').slice(0,11);if(d.length>10)d=d.replace(/(\d{2})(\d{5})(\d{4})/,'($1) $2-$3');else if(d.length>6)d=d.replace(/(\d{2})(\d{4,5})(\d{0,4})/,'($1) $2-$3');else if(d.length>2)d=d.replace(/(\d{2})(\d{0,5})/,'($1) $2');el.value=d;}
-function mMoeda(el){let v=el.value.replace(/\D/g,'');v=(parseInt(v||'0')/100).toFixed(2);v=v.replace('.',',').replace(/\B(?=(\d{3})+(?!\d))/g,'.');el.value=v;cbPrev();}
-function cpfOk(c){c=c.replace(/[.\-]/g,'');if(c.length!==11||/^(\d)\1+$/.test(c))return false;let s=0;for(let i=0;i<9;i++)s+=+c[i]*(10-i);let r=s%11<2?0:11-(s%11);if(r!==+c[9])return false;s=0;for(let i=0;i<10;i++)s+=+c[i]*(11-i);r=s%11<2?0:11-(s%11);return r===+c[10];}
+let estEditId = null;
 
-/* ══════════════════════════════════════
-   LOGIN
-══════════════════════════════════════ */
-// Credenciais — altere aqui se quiser mudar no futuro
-const CREDS = { user: '1', pass: '1' };
-const SESSION_KEY = 'pochmann_auth';
+// Garante que o DB tem a tabela de estoque
+if (!D.estoque)  { D.estoque = []; dbSave(); }
+if (!D.seq.est)  { D.seq.est = 1;  dbSave(); }
 
-function verificarSessao() {
-  return sessionStorage.getItem(SESSION_KEY) === 'ok';
+function irEstoque() {
+  sbFechar();
+  CA = null;
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('on','sel'));
+  document.getElementById('nav-est').classList.add('on');
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+  document.getElementById('v-est').classList.add('on');
+  document.getElementById('est-busca').value = '';
+  estRenderAll();
 }
 
-function fazerLogin() {
-  const user = document.getElementById('login-user').value.trim();
-  const pass = document.getElementById('login-pass').value;
-  const erro = document.getElementById('login-erro');
-  const btn  = document.getElementById('login-btn');
-
-  if (user === CREDS.user && pass === CREDS.pass) {
-    sessionStorage.setItem(SESSION_KEY, 'ok');
-    document.getElementById('login-screen').style.display = 'none';
-    erro.classList.remove('on');
-    init();
-  } else {
-    erro.classList.add('on');
-    document.getElementById('login-pass').value = '';
-    document.getElementById('login-pass').focus();
-    // Pequena animação de shake
-    const box = document.querySelector('.login-box');
-    box.style.animation = 'none';
-    box.style.transform = 'translateX(-8px)';
-    setTimeout(() => { box.style.transition = 'transform .3s'; box.style.transform = 'none'; }, 50);
-  }
-}
-
-function fazerLogout() {
-  sessionStorage.removeItem(SESSION_KEY);
-  document.getElementById('login-screen').style.display = 'flex';
-  document.getElementById('login-user').value = '';
-  document.getElementById('login-pass').value = '';
-  document.getElementById('login-erro').classList.remove('on');
-  // Esconde o app
+function irDash() {
+  CA = null;
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('on','sel'));
+  document.getElementById('nav-dash').classList.add('on');
   document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
   document.getElementById('v-dash').classList.add('on');
-  CA = null;
+  listaRender();
+  dashRender();
 }
 
-/* ══════════════════════════════════════
-   BOOT
-══════════════════════════════════════ */
-if (verificarSessao()) {
-  document.getElementById('login-screen').style.display = 'none';
-  init();
-} else {
-  document.getElementById('ld').classList.remove('on');
-  document.getElementById('login-user').focus();
+function estRenderAll() {
+  estRender(D.estoque.slice().sort((a,b) => (a.nome||'').localeCompare(b.nome)));
 }
+
+function estFiltrar(f) {
+  const fl = f.toLowerCase().trim();
+  if (!fl) { estRenderAll(); return; }
+  estRender(D.estoque.filter(p =>
+    (p.nome||'').toLowerCase().includes(fl) ||
+    (p.cod||'').toLowerCase().includes(fl)  ||
+    (p.forn||'').toLowerCase().includes(fl)
+  ));
+}
+
+function estRender(lista) {
+  const totalProd  = D.estoque.length;
+  const totalItens = D.estoque.reduce((s,p) => s + (parseInt(p.qtd)||0), 0);
+  const totalVal   = D.estoque.reduce((s,p) => s + ((parseFloat(p.preco)||0) * (parseInt(p.qtd)||0)), 0);
+
+  document.getElementById('est-resumo').innerHTML = `
+    <div class="stat-card"><div class="stat-label">Produtos cadastrados</div><div class="stat-value green">${totalProd}</div></div>
+    <div class="stat-card"><div class="stat-label">Total em estoque</div><div class="stat-value">${totalItens} un.</div></div>
+    <div class="stat-card"><div class="stat-label">Valor em estoque</div><div class="stat-value" style="font-size:15px">${brl(totalVal)}</div></div>`;
+
+  const el = document.getElementById('est-grid');
+  if (!lista.length) {
+    el.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <i class="fa-solid fa-boxes-stacked"></i>
+      <h3>${D.estoque.length ? 'Nenhum resultado' : 'Nenhum produto cadastrado'}</h3>
+      <p>Clique em "Novo Produto" para adicionar lentes ao estoque.</p>
+    </div>`;
+    return;
+  }
+
+  el.innerHTML = lista.map(p => {
+    const qtd    = parseInt(p.qtd) || 0;
+    const zeroCl = qtd === 0 ? 'zero' : '';
+    const specs  = [
+      p.tipo      ? `<div class="est-spec"><div class="est-spec-lbl">Tipo</div><div class="est-spec-val">${esc(p.tipo)}</div></div>` : '',
+      p.material  ? `<div class="est-spec"><div class="est-spec-lbl">Material</div><div class="est-spec-val">${esc(p.material)}</div></div>` : '',
+      p.tratamento? `<div class="est-spec"><div class="est-spec-lbl">Tratamento</div><div class="est-spec-val">${esc(p.tratamento)}</div></div>` : '',
+      p.indice    ? `<div class="est-spec"><div class="est-spec-lbl">Índice</div><div class="est-spec-val">${esc(p.indice)}</div></div>` : '',
+      p.esfera    ? `<div class="est-spec"><div class="est-spec-lbl">Esfera</div><div class="est-spec-val">${esc(p.esfera)}</div></div>` : '',
+      p.cilindro  ? `<div class="est-spec"><div class="est-spec-lbl">Cilindro</div><div class="est-spec-val">${esc(p.cilindro)}</div></div>` : '',
+    ].filter(Boolean).join('');
+
+    return `<div class="est-card">
+      <div class="est-card-header">
+        <div>
+          <div class="est-nome">${esc(p.nome)}</div>
+          <div class="est-cod"><i class="fa-solid fa-barcode" style="font-size:9px"></i>${esc(p.cod)}</div>
+        </div>
+        <div class="est-actions">
+          <button class="btn btn-ghost btn-icon btn-sm" onclick="estModalAbrir(${p.id})" title="Editar"><i class="fa-solid fa-pen" style="font-size:12px"></i></button>
+          <button class="btn btn-ghost btn-icon btn-sm" style="color:var(--danger)" onclick="estExcluir(${p.id},'${esc(p.nome).replace(/'/g,"\\'")}')"><i class="fa-solid fa-trash" style="font-size:12px"></i></button>
+        </div>
+      </div>
+      ${specs ? `<div class="est-specs">${specs}</div>` : ''}
+      ${p.obs ? `<div style="font-size:12px;color:var(--text3);margin-bottom:10px;line-height:1.5"><i class="fa-regular fa-note-sticky" style="margin-right:4px"></i>${esc(p.obs)}</div>` : ''}
+      ${p.forn ? `<div class="est-forn"><i class="fa-solid fa-truck" style="font-size:10px"></i>${esc(p.forn)}</div>` : ''}
+      <div class="est-footer">
+        <div class="est-preco">${p.preco ? brl(p.preco) : '—'}</div>
+        <div class="est-qtd-wrap">
+          <button class="est-qtd-btn" onclick="estQtd(${p.id},-1)">−</button>
+          <div class="est-qtd-num ${zeroCl}">${qtd}</div>
+          <button class="est-qtd-btn" onclick="estQtd(${p.id},+1)">+</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function estQtd(id, delta) {
+  const p = D.estoque.find(x => x.id === id);
+  if (!p) return;
+  p.qtd = Math.max(0, (parseInt(p.qtd)||0) + delta);
+  dbSave();
+  // Re-renderiza mantendo filtro atual
+  const f = document.getElementById('est-busca').value;
+  if (f.trim()) estFiltrar(f); else estRenderAll();
+}
+
+function estModalAbrir(id) {
+  estEditId = id;
+  ['est-nome','est-cod','est-forn','est-qtd','est-preco',
+   'est-trat','est-indice','est-esfera','est-cilindro','est-obs'].forEach(i => sv(i,''));
+  ['est-tipo','est-mat'].forEach(i => { document.getElementById(i).value=''; });
+  ['eest-nome','eest-cod','eest-qtd'].forEach(i => { document.getElementById(i).textContent=''; });
+  document.getElementById('mest-titulo').textContent = id ? 'Editar Produto' : 'Novo Produto';
+
+  if (id) {
+    const p = D.estoque.find(x => x.id === id);
+    if (p) {
+      sv('est-nome', p.nome);
+      sv('est-cod', p.cod);
+      sv('est-forn', p.forn);
+      sv('est-qtd', p.qtd ?? 0);
+      document.getElementById('est-preco').value = p.preco ? parseFloat(p.preco).toFixed(2).replace('.',',') : '';
+      document.getElementById('est-tipo').value = p.tipo || '';
+      document.getElementById('est-mat').value  = p.material || '';
+      sv('est-trat', p.tratamento);
+      sv('est-indice', p.indice);
+      sv('est-esfera', p.esfera);
+      sv('est-cilindro', p.cilindro);
+      sv('est-obs', p.obs);
+    }
+  }
+  modalAbrir('m-est');
+}
+
+function estSalvar() {
+  const nome = gv('est-nome');
+  const cod  = gv('est-cod');
+  const qtdV = document.getElementById('est-qtd').value.trim();
+  const precoS = document.getElementById('est-preco').value.replace(/\./g,'').replace(',','.');
+
+  ['eest-nome','eest-cod','eest-qtd'].forEach(i => { document.getElementById(i).textContent=''; });
+  let ok = true;
+  if (!nome)                                       { document.getElementById('eest-nome').textContent='Informe o nome.'; ok=false; }
+  if (!cod)                                        { document.getElementById('eest-cod').textContent='Informe o código.'; ok=false; }
+  if (qtdV==='' || isNaN(parseInt(qtdV)) || parseInt(qtdV)<0) { document.getElementById('eest-qtd').textContent='Informe a quantidade.'; ok=false; }
+  if (!ok) return;
+
+  const payload = {
+    nome, cod,
+    forn:       gv('est-forn') || null,
+    qtd:        parseInt(qtdV),
+    preco:      precoS && !isNaN(+precoS) ? parseFloat(precoS) : null,
+    tipo:       document.getElementById('est-tipo').value || null,
+    material:   document.getElementById('est-mat').value  || null,
+    tratamento: gv('est-trat')    || null,
+    indice:     gv('est-indice')  || null,
+    esfera:     gv('est-esfera')  || null,
+    cilindro:   gv('est-cilindro')|| null,
+    obs:        gv('est-obs')     || null,
+  };
+
+  if (estEditId) {
+    const idx = D.estoque.findIndex(x => x.id === estEditId);
+    if (idx >= 0) D.estoque[idx] = { ...D.estoque[idx], ...payload };
+    toastShow('Produto atualizado!', 'success');
+  } else {
+    D.estoque.push({ id: nid('est'), ...payload });
+    toastShow('Produto cadastrado!', 'success');
+  }
+  dbSave();
+  modalFechar('m-est');
+  estRenderAll();
+}
+
+function estExcluir(id, nome) {
+  confPedir('Excluir produto?', `"${nome}" será removido do estoque.`, 'Excluir Produto', () => {
+    D.estoque = D.estoque.filter(p => p.id !== id);
+    dbSave();
+    toastShow('Produto excluído.', 'info');
+    estRenderAll();
+  });
+}
+
+/* ── INIT ── */
+listaRender();
+dashRender();
 </script>
 </body>
 </html>
