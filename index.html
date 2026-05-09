@@ -316,7 +316,7 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
   </div>
 </div>
 
-<div class="ld on" id="ld"><div class="spin"></div><span id="ld-msg">Conectando ao banco de dados…</span></div>
+<div class="ld" id="ld"><div class="spin"></div><span id="ld-msg">Conectando ao banco de dados…</span></div>
 <div class="foto-viewer" id="fv"><button class="foto-viewer-close" onclick="fvF()"><i class="fa-solid fa-xmark"></i></button><img id="fv-img" src="" alt=""></div>
 <div class="sb-bg" id="sb-bg" onclick="sbF()"></div>
 
@@ -670,8 +670,10 @@ async function init(){
       <div style="font-size:15px;font-weight:600;margin-bottom:8px">Erro de conexão</div>
       <div style="font-size:13px;color:var(--text2);margin-bottom:12px">Não foi possível conectar ao banco de dados.<br>Verifique se as tabelas foram criadas no Supabase.</div>
       <div style="font-size:11px;font-family:monospace;background:#fee;padding:10px;border-radius:8px;color:var(--danger)">${e.message}</div>
+      <button onclick="fazerLogout()" style="margin-top:16px;padding:8px 16px;background:var(--accent);color:#fff;border:none;border-radius:8px;cursor:pointer;font-size:13px">Voltar ao login</button>
     </div>`;
     document.getElementById('ld').classList.add('on');
+    console.error(e);
   }
 }
 
@@ -1345,14 +1347,6 @@ function estExcluirP(id, nome) {
 // Credenciais — altere aqui se quiser mudar no futuro
 const CREDS = { user: '1', pass: '1' };
 const SESSION_KEY = 'pochmann_auth';
-const SESSION_VER = 'pochmann_ver';
-const APP_VER     = '2'; // incremente aqui se quiser forçar novo login em todos
-
-// Se a versão da sessão mudou, limpa e força novo login
-if (sessionStorage.getItem(SESSION_VER) !== APP_VER) {
-  sessionStorage.removeItem(SESSION_KEY);
-  sessionStorage.setItem(SESSION_VER, APP_VER);
-}
 
 function verificarSessao() {
   return sessionStorage.getItem(SESSION_KEY) === 'ok';
@@ -1362,20 +1356,19 @@ function fazerLogin() {
   const user = document.getElementById('login-user').value.trim();
   const pass = document.getElementById('login-pass').value;
   const erro = document.getElementById('login-erro');
-  const btn  = document.getElementById('login-btn');
 
   if (user === CREDS.user && pass === CREDS.pass) {
     sessionStorage.setItem(SESSION_KEY, 'ok');
     document.getElementById('login-screen').style.display = 'none';
     erro.classList.remove('on');
+    ldOn('Conectando ao banco de dados…');
     init();
   } else {
     erro.classList.add('on');
     document.getElementById('login-pass').value = '';
     document.getElementById('login-pass').focus();
-    // Pequena animação de shake
     const box = document.querySelector('.login-box');
-    box.style.animation = 'none';
+    box.style.transition = 'none';
     box.style.transform = 'translateX(-8px)';
     setTimeout(() => { box.style.transition = 'transform .3s'; box.style.transform = 'none'; }, 50);
   }
@@ -1398,13 +1391,8 @@ function fazerLogout() {
 /* ══════════════════════════════════════
    BOOT
 ══════════════════════════════════════ */
-if (verificarSessao()) {
-  document.getElementById('login-screen').style.display = 'none';
-  init();
-} else {
-  document.getElementById('ld').classList.remove('on');
-  document.getElementById('login-user').focus();
-}
+// Login screen sempre visível ao carregar — init() só roda após login
+document.getElementById('login-user').focus();
 </script>
 </body>
 </html>
