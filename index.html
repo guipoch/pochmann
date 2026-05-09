@@ -623,7 +623,7 @@ const cls=(id,c,on)=>document.getElementById(id).classList[on?'add':'remove'](c)
 /* ══════════════════════════════════════
    LOADING
 ══════════════════════════════════════ */
-function ldOn(m='Aguarde…'){const el=document.getElementById('ld');document.getElementById('ld-msg').textContent=m;el.classList.add('on');}
+function ldOn(m='Aguarde…'){const el=document.getElementById('ld');el.innerHTML=`<div class="spin"></div><span>${m}</span>`;el.classList.add('on');}
 function ldOff(){document.getElementById('ld').classList.remove('on');}
 
 /* ══════════════════════════════════════
