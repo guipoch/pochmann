@@ -298,7 +298,7 @@ input.rx{text-align:center;font-family:var(--mono);font-size:13px}
     </div>
     <div class="login-title">Acesso restrito</div>
     <div class="login-sub">Digite suas credenciais para continuar.</div>
-    <div class="login-erro" id="login-erro">
+    <div class="login-erro" id="login-erro" style="display:none">
       <i class="fa-solid fa-circle-xmark"></i>
       <span>Usuário ou senha incorretos.</span>
     </div>
@@ -1342,57 +1342,42 @@ function estExcluirP(id, nome) {
 }
 
 /* ══════════════════════════════════════
-   LOGIN
+   BOOT + LOGIN
 ══════════════════════════════════════ */
-// Credenciais — altere aqui se quiser mudar no futuro
-const CREDS = { user: '1', pass: '1' };
-const SESSION_KEY = 'pochmann_auth';
+(function() {
+  const LOGIN = { user: '1', pass: '1' };
 
-function verificarSessao() {
-  return sessionStorage.getItem(SESSION_KEY) === 'ok';
-}
-
-function fazerLogin() {
-  const user = document.getElementById('login-user').value.trim();
-  const pass = document.getElementById('login-pass').value;
-  const erro = document.getElementById('login-erro');
-
-  if (user === CREDS.user && pass === CREDS.pass) {
-    sessionStorage.setItem(SESSION_KEY, 'ok');
-    document.getElementById('login-screen').style.display = 'none';
-    erro.classList.remove('on');
-    ldOn('Conectando ao banco de dados…');
-    init();
-  } else {
-    erro.classList.add('on');
-    document.getElementById('login-pass').value = '';
-    document.getElementById('login-pass').focus();
-    const box = document.querySelector('.login-box');
-    box.style.transition = 'none';
-    box.style.transform = 'translateX(-8px)';
-    setTimeout(() => { box.style.transition = 'transform .3s'; box.style.transform = 'none'; }, 50);
+  function tentarLogin() {
+    const u = document.getElementById('login-user').value.trim();
+    const p = document.getElementById('login-pass').value;
+    if (u === LOGIN.user && p === LOGIN.pass) {
+      document.getElementById('login-screen').style.display = 'none';
+      init();
+    } else {
+      document.getElementById('login-erro').style.display = 'flex';
+      document.getElementById('login-pass').value = '';
+      document.getElementById('login-pass').focus();
+    }
   }
-}
 
-function fazerLogout() {
-  sessionStorage.removeItem(SESSION_KEY);
-  document.getElementById('login-screen').style.display = 'flex';
-  document.getElementById('login-user').value = '';
-  document.getElementById('login-pass').value = '';
-  document.getElementById('login-erro').classList.remove('on');
-  // Esconde o app e reseta estado
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
-  document.getElementById('v-dash').classList.add('on');
-  ['nav-dash','nav-est'].forEach(id => document.getElementById(id).classList.remove('on'));
-  document.getElementById('nav-dash').classList.add('on');
-  CA = null; estTodos = [];
-}
+  // Expõe a função globalmente para os onclick do HTML
+  window.fazerLogin = tentarLogin;
 
-/* ══════════════════════════════════════
-   BOOT
-══════════════════════════════════════ */
-// Login screen sempre visível ao carregar — init() só roda após login
-document.getElementById('login-user').focus();
+  window.fazerLogout = function() {
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('login-user').value = '';
+    document.getElementById('login-pass').value = '';
+    document.getElementById('login-erro').style.display = 'none';
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('on'));
+    document.getElementById('v-dash').classList.add('on');
+    ['nav-dash','nav-est'].forEach(id => document.getElementById(id).classList.remove('on'));
+    document.getElementById('nav-dash').classList.add('on');
+    CA = null; estTodos = [];
+  };
+
+  // Foca no campo usuário ao carregar
+  document.getElementById('login-user').focus();
+})();
 </script>
 </body>
 </html>
